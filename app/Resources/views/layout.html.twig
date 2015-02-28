@@ -26,17 +26,20 @@
 		<meta name="ROBOTS" content="INDEX, FOLLOW" />
 		<meta name="audience" content="All" />
 		<meta name="revisit-after" content="21 days" />
-                
-                <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-                    
-		{% javascripts '@LaMaltiereSiteWebMaltiereBundle/Resources/public/js/*' output='bundles/lamaltieresitewebmaltiere/ressources/scipts.js' %}
-			<script type="text/javascript" src="{{ asset_url }}"></script>
+                       
+		{% javascripts 
+            '@LaMaltiereSiteWebMaltiereBundle/Resources/public/js/jquery-1.9.1.min.js'
+            '@LaMaltiereSiteWebMaltiereBundle/Resources/public/js/*' 
+            output='bundles/lamaltieresitewebmaltiere/ressources/scripts.js' %}
+			     <script type="text/javascript" src="{{ asset_url }}"></script>
 		{% endjavascripts %}
 		
 		{% stylesheets '@LaMaltiereSiteWebMaltiereBundle/Resources/public/css/*' filter='cssrewrite' output='bundles/lamaltieresitewebmaltiere/ressources/main.css' %}
 			<link rel="stylesheet" href="{{ asset_url }}" />
 		{% endstylesheets %}
 	</head>
+    <?php use_javascript('jquery-1.9.1.min.js') ?>
+    <?php include_javascripts() ?>
 	<body>
 		<header>
 			{% block header %}

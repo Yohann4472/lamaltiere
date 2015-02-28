@@ -6,15 +6,19 @@ security:
         in_memory:
             memory:
                 users:
-                    lamaltiere: { password: 2v3g698TuiP, roles: 'ROLE_ADMIN' }
+                    lamaltiere: { password: toto, roles: 'ROLE_ADMIN' }
 
     firewalls:
 
         secured_area:
             pattern:    ^/
             anonymous: ~
-            http_basic:
-                realm: "Administration La Maltiere"
+            form_login:
+               login_path: /fr/login
+               check_path: /fr/login_check
+            logout:
+                path: /fr/logout
+                target: /
 
     access_control:
         - { path: ^/administration, roles: ROLE_ADMIN }
