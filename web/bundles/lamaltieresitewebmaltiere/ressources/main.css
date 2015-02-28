@@ -1,0 +1,530 @@
+label {
+    width                       :   180px;
+    display                     :   inline-block;
+}
+
+input[type="submit"]{
+    margin                      :   auto;
+    display                     :   block;
+    cursor                      :   pointer;
+}
+
+.formCommande{
+    background                              :       #eae9e9;
+    color                                   :       #797979;
+    border-width                            :       1px;
+    border-style                            :       solid;
+    border-color                            :       black;
+    width                                   :       400px;
+    border-radius                           :       5px;
+}
+
+.formCommande label{
+    text-align: left;
+}
+html {
+	overflow-y 				: 		scroll;
+}
+
+body {
+	margin					:		0;
+	padding					:		0;
+	background				: 		black;
+	width					:		100%;
+	height					:		100%;
+	font					:		13px Arial, Helvetica, sans-serif;
+	color					:		white;
+}
+
+header{
+	width					: 		1000px;
+	height					:		70px;
+	margin					: 		10px auto;
+}
+
+.contact{
+	width					:		400px;
+	height					:		25px;
+	text-decoration                         :		none;
+	text-align				:		right;
+	float					:		right;
+}
+
+.contact img {
+	vertical-align                           :		middle;
+	width					:		20px;
+	height					:		20px;
+}
+
+header .logo {
+	position				:		relative;
+	width					:		170px;
+	height					:		50px;
+	float					:		left;
+	text-align				:		center;
+	margin-top				:		10px;
+}
+
+.logo img{
+	width					:		190px;
+	height					:		70px;
+}
+
+section{
+	height					:		auto;
+	width					:		1000px;
+	padding					:		1px 0px 1px 2px;
+	margin					:		0px auto 0px auto;
+}
+
+.conteneur {
+	height					:		auto;
+	width					:		1000px;
+	margin-top				:		25px;
+	padding					:		2px 10px 10px 10px;
+	background-color                        :		gray;
+	border-radius                           :		10px;
+}
+
+.presentation{
+	width					:		auto;
+	margin					:		20px auto;
+}
+
+.presentation ul{
+	width					:		795px;
+	height					:		135px;
+	margin					:		auto;
+}
+
+.presentation li{
+	display					:		inline-block;
+}
+
+.presentation p {
+	width					:		620px;
+	height					:		auto;
+}
+
+.presentation p:first-letter {
+	font-size				:		19pt;
+}
+
+.video,
+iframe
+{
+	margin					:		-10px 20px 0px 0px;
+	float					:		right;
+}
+
+.imgBas {
+	width					:		189px;
+	height					:		111px;
+	margin-top				:		10px;
+}
+
+figure {
+	margin					:		0px 0px 6px 0px;
+	display					: 		inline-block;
+}
+
+figcaption{
+	text-align				:		center;
+}
+
+.article{
+	vertical-align                          :               top;
+	box-shadow                              :               -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
+}
+
+.article:hover{
+	vertical-align                          :               top;
+	box-shadow                              :               -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+
+.modele{
+	float					:		right;
+	width					:		730px;
+	height					:		auto;
+	margin-right                            :		10px;
+}
+
+#spacer{
+	clear					:		both;
+}
+
+footer{
+	width					:		1000px;
+	margin					:		0px auto;
+	height					:		114px;
+	padding					:		1px 0px 0px 0px;
+	color					:		rgb(252,102,0);
+	text-align				:		center;
+}
+
+article{
+	position				:               relative;
+	width					:               215px;
+	height					:               200px;
+	float					:               left;
+	padding					:               10px 5px 20px 5px;
+        border-radius                           :               5px;
+        margin                                  :               0px 0px 15px 20px;
+        border                                  :               1px solid white;
+        background-color                        :               #eae9e9;
+}
+
+article:hover{
+        background-color                        :               #797979;
+}
+
+table {
+        background                              :               #eae9e9;
+        color                                   :               #797979;
+        border-width                            :               1px;
+        border-style                            :               solid;
+        border-color                            :               black;
+}
+
+td {
+        text-align                              :               center;
+}
+
+thead td:first-child {
+        width                                   :               100px;
+}
+
+thead td:nth-child(n+2) {
+        width                                   :               80px;
+}
+
+tbody {
+        color                                   :               black;
+}
+
+.nom{
+    height                                      :               20px;
+    font-size                                   :               9pt;
+}
+
+.detailProduit{
+    background                                  :               #eae9e9;
+    color                                       :               black;
+    border-width                                :               1px;
+    border-style                                :               solid;
+    border-color                                :               black;
+    height                                      :               249px;
+    width                                       :               560px;
+    float                                       :               right;
+    padding                                     :               5px 0px 5px 5px;
+    margin-top                                  :               10px; 
+}
+
+.panier td:first-child {
+    width                                       :               150px;
+}
+
+.panier td:nth-child(2) {
+    width                                       :               200px;
+}
+
+.panier td:nth-child(n+3) {
+    width                                       :               65px;
+}
+
+.survol{
+    border-width                                :               2px;
+    border-style                                :               solid;
+    border-color                                :               white;
+}
+.secondaire{
+	float					:		left;
+	height					:		100%;
+	width					:		220px;
+	margin-left				:		10px;
+	margin-top				:		8px;
+}
+
+.gauche,
+.gauche ul,
+.gauche li,
+.gauche a,
+.gauche span {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: none;
+}
+
+.gauche li {
+ list-style: none;
+}
+
+/* Accordian Style */
+
+.gauche li > a {
+ display: block;
+ position: relative;
+ width: 200px;
+ padding: 0 10px 0 0;
+ text-align: center;
+ height: 32px;
+ color: #FFFFFF;
+ font: bold 12px/32px Arial, sans-serif;
+ text-decoration: none;
+ background: #343435;
+ background: -moz-linear-gradient(top, #343435 1%, #4a4a4a 100%);
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#343435), color-stop(100%,#4a4a4a));
+ background: -webkit-linear-gradient(top, #343435 1%,#4a4a4a 100%);
+ background: -o-linear-gradient(top, #343435 1%,#4a4a4a 100%);
+ background: -ms-linear-gradient(top, #343435 1%,#4a4a4a 100%);
+ background: linear-gradient(top, #343435 1%,#4a4a4a 100%);
+ -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+ -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+ box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+}
+
+
+.gauche > li:hover > a,
+.gauche > li:target > a {
+ text-shadow: 1px 1px 1px rgba(255,255,255, .2);
+ background: #20a4ca;
+ background: -moz-linear-gradient(top, #20a4ca 1%, #47b5d4 100%);
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#20a4ca), color-stop(100%,#47b5d4));
+ background: -webkit-linear-gradient(top, #20a4ca 1%,#47b5d4 100%);
+ background: -o-linear-gradient(top, #20a4ca 1%,#47b5d4 100%);
+ background: -ms-linear-gradient(top, #20a4ca 1%,#47b5d4 100%);
+ background: linear-gradient(top, #20a4ca 1%,#47b5d4 100%);
+ -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+ -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+ box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+}
+
+/* Sub-Menu */
+
+.sub-menu li a {
+ color: #797979;
+ text-shadow: 1px 1px 0px rgba(255,255,255, .2);
+ background: #eae9e9;
+ border-bottom: 1px solid #c1bfbf;
+ -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+ -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+ box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+}
+
+.sub-menu li:hover a { background: #f6f5f5; color:orange }
+
+/* Accordian Function */
+.gauche li > .sub-menu {
+ height: 0;
+ overflow: hidden;
+ -webkit-transition: height .2s ease-in-out;
+ -moz-transition: height .2s ease-in-out;
+ -o-transition: height .2s ease-in-out;
+ -ms-transition: height .2s ease-in-out;
+ transition: height .2s ease-in-out;
+}
+
+
+.gauche li:target > .sub-menu {
+ height: auto;
+}
+.principal{
+	position				:		relative;
+	height					:		100%;
+	width					:		690px;
+	float					:		left;
+	margin-left				:		30px;
+}
+
+.principal ul ul {
+	display: none;
+}
+
+.principal ul li:hover > ul {
+	display: block;
+	z-index:99;
+}
+	
+.principal ul {
+	background: #efefef; 
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	padding: 0px 20px;
+	margin:0px;
+	border-radius: 10px;  
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+
+.principal ul:after {
+	content: ""; 
+	clear: both; 
+	display: block;
+}
+	
+.principal ul li {
+	float: left;
+}
+.principal ul li:hover {
+	background: #4b545f;
+	background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+}
+
+.principal ul li:hover a {
+	color: #fff;
+}
+	
+.principal ul li a {
+	display: block; 
+	padding: 10px 9px;
+	font: 13pt Arial, sans-serif;
+	color: #757575; 
+	text-decoration: none;
+}
+	
+.principal ul ul {
+	background: #5f6975; 
+	border-radius: 0px; 
+	padding: 0;
+	position: absolute; 
+	top: 100%;
+}
+
+.principal ul ul li {
+	float: none; 
+	border-top: 1px solid #6b727c;
+	border-bottom: 1px solid #575f6a;
+	position: relative;
+}
+
+.principal ul ul li a {
+	padding: 10px 15px;
+	color: #fff;
+}	
+
+.principal ul ul li a:hover {
+	background: #4b545f;
+}
+.swipe {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	margin: 10px auto 20px;
+}
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+}
+.swipe-wrap > div {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+.swipe .nav {
+	position: absolute;
+	width: 40px;
+	height: 38px;
+	z-index: 10;
+	text-align: center;
+	line-height: 40px;
+	display: inline-block;
+	color: #fff;
+	top: 45%;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.8)
+}
+.swipe .nav.next {
+	right: 0;
+	-webkit-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.swipe .nav.prev {
+	-webkit-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+a {
+	text-decoration                         :		none;
+	color					:		white;
+}
+
+a:hover{
+	color					:		rgb(252,102,0);
+}
+
+.petit {
+	font-size				:		9pt;
+}
+
+.gras {
+	font-weight				:		bold;
+	font-size				:		11pt;
+}
+
+@font-face {
+	font-family				:		'Brushsci';
+	src					:		url('../../../Resources/public/Brush_Script_MT_Italic.ttf');
+}
+
+h1{
+	font-size				:		22px;
+	color					:		rgb(252,102,0);
+}
+
+h2{
+	margin-top				:		8px;
+	font-weight				:		bold;
+	background-color                        :		black;
+	color					:		rgb(252,102,0);
+	height					:		34px;
+	padding					:		10px 0px 0px 10px;
+        border-radius                           :               10px;
+}
+
+.contour {
+	border					:		1px solid rgb(252,102,0);
+}
+
+h3{
+    color                                       :               black;
+}
+
+h4{
+    background-color                            :               #eae9e9;
+    padding                                     :               15px;
+    color                                       :               black;
+    height                                      :               auto;
+}
+
+.action{
+    float                                       :               right;
+    margin-right                                :               30px;
+}
+
+.action a{
+    color                                       :               #08C;
+}
+
+.action a:hover{
+    color                                       :               orange;
+}
+
+.prix{
+    color                                       :               red;
+    text-align                                  :               center;
+    font-size                                   :		16pt;
+}
+
+hr {
+    width                                       :               80%;
+}
+
+.total{
+    font-weight                                 :		bold;
+}
