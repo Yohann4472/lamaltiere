@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -30,9 +30,11 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         titre: %app_titre%
+        statut: %app_statut%
         entreprise: %app_entreprise%
         adresse: %app_adresse%
         ville: %app_ville%
+        pays: %app_pays%
         telephone: %app_telephone%
         mail: %app_mail%
         copyright: %app_copyright%
@@ -83,4 +85,4 @@ swiftmailer:
     auth_mode:  login
     host:       auth.smtp.1and1.fr
     username:   info@la-maltiere.com
-    password:   
+    password:   meline555MELINE
