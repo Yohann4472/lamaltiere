@@ -1,0 +1,27 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     lamaltiere
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            fr
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    app_entreprise:    SAS LA MALTIERE
+    app_adresse:       5 Rue du Lavoir
+    app_ville:         53120 LEVARE (FRANCE)
+    app_telephone:     Tél : 06 62 04 24 79 / 02 43 05 00 72
+    app_mail:          info@la-maltiere.com
+    app_titre:         Fabrication artisanale de barques et bateaux en aluminium
+    app_copyright:     © copyright 2014 La Maltiere
+    app_skype:         Skype : Barques aluminium / Aluminium boat
+    app_siret:         SIRET : 79949435600014
+    app_ape:           APE 4649Z RCS LAVAL
+    app_prix:          1100 euros

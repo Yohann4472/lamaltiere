@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+                <meta content="width=device-width" name="viewport">
+		<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+                <title>{{ entreprise }}</title>
+		
+		<link rel="icon" type="image/x-icon" href="{{ asset('bundles/lamaltieresitewebmaltiere/images/icones/favicon.ico') }}" />
+		
+                <META name="author" content="La Maltiere" />
+		<!-- For speakers of British English -->
+		<META name="keywords" lang="en" 
+			content="boat, boats, rowing, rowingboat, aluminium, exposition, paddle, boat, pedal, repair, fishing, floating, houses, speed, albatross, building, deck, leisure, carnivore, craftsman, to solder, carp, etang, river, tourism, light, craftsman" />
+		<meta name="description" content="The MALTIERE is a specialized small factory using experienced craftesmen to make fishing boats and welded all.Our boats can be customized according to the customers requirements.Our boats are sold in France, Belgium, Switzerland (Swiss), Cameroon, New Caledonia, Vietnam, Niger, Maroc, Congo" /> 
+		<meta name="Identifier-URL" content="http://www.aluminium-boat.com" />
+		
+		<!-- For speakers of French -->
+		
+		<META name="keywords" lang="fr" 
+			content="barque, aluminium, la maltiere, maltiere, bois, pêche, bateau, vente, fabrication, peche, rame, canot, moteur, professionnel, fond plat, voyage, occasion, construction, carpe, carnassier, atelier, nautique, chantier, artisanal, la-maltiere, vitesse, legere, peche, loisirs, soudure, artisan, poissons, etang, riviere, tourisme" />
+		<meta name="description" content="La Maltiere est une fabrique artisanale de bateaux en aluminium, de barques de pêche l&eacute;g&egrave;re et stable. Travail, pêche ou loisirs. Transport facile. A visiter chez La Maltiere, France." />
+		
+		<meta name="Identifier-URL" content="http://www.la-maltiere.com" />
+		
+		<meta name="DC.title" content="Barques de pêche en aluminium soudé" />
+		<meta name="ROBOTS" content="INDEX, FOLLOW" />
+		<meta name="audience" content="All" />
+		<meta name="revisit-after" content="21 days" />
+                
+                <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+                    
+		{% javascripts '@LaMaltiereSiteWebMaltiereBundle/Resources/public/js/*' output='bundles/lamaltieresitewebmaltiere/ressources/scipts.js' %}
+			<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+		
+		{% stylesheets '@LaMaltiereSiteWebMaltiereBundle/Resources/public/css/*' filter='cssrewrite' output='bundles/lamaltieresitewebmaltiere/ressources/main.css' %}
+			<link rel="stylesheet" href="{{ asset_url }}" />
+		{% endstylesheets %}
+	</head>
+	<body>
+		<header>
+			{% block header %}
+			{% endblock %}
+		</header>
+		{% block section %}
+		{% endblock %}
+		<footer>
+			{% block footer %}
+			{% endblock %}
+		</footer>
+    </body>
+</html>
