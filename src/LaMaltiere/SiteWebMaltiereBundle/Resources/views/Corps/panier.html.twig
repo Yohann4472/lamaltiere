@@ -1,1 +1,53 @@
-{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}{% block section %}<section class="conteneur">    <h2>{% if app.session.get('lang') == 'fr' %}Mon panier{% else %}My cart{% endif %}<span class="action"><a href="{{ path('lamaltiere_magasin') }}">{% if app.session.get('lang') == 'fr' %}Retour au magasin{% else %}Back to shop{% endif %}</a></span></h2>                {% set panier = app.session.get('panier') %}                {% if app.session.get('panier') == null %}            {% if app.session.get('lang') == 'fr' %}Votre panier est vide.{% else %}Your cart is empty.{% endif %}<br />            {% if mailClient is defined %}                <center>                    {% if app.session.get('lang') == 'fr' %}                        Votre commande a bien été envoyé à la société La Maltière. <br />                        Un email récapitulatif de votre commande a été envoyé sur l'adresse mail : {{ mail }}.                    {% else %}                        Your order has been sent to La Maltiere. <br />                        An email summary has been sent on the email address : {{ mail }}.                    {% endif %}                </center>            {% endif %}        {% else %}            <center><table class="panier">                    <caption><h4>{% if app.session.get('lang') == 'fr' %}Récapitulatif des articles{% else %}Summary of articles{% endif %}</h4></caption>                <thead>                    <tr>                        <th></th>                        <th>{% if app.session.get('lang') == 'fr' %}Produit{% else %}Product{% endif %}</th>                        <th>{% if app.session.get('lang') == 'fr' %}Quantité{% else %}Quantity{% endif %}</th>                        <th>{% if app.session.get('lang') == 'fr' %}P.U{% else %}Unit price{% endif %}</th>                        <th>{% if app.session.get('lang') == 'fr' %}Total{% else %}Total{% endif %}</th>                        <th></th>                    </tr>                </thead>                <tbody>                    {% set total = 0 %}                    {% for produit in panier %}                        <tr>                            <td><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/produits/'~ produit[1] ~'/'~ produit[0] ~'/1.jpg') }}" width="140px" height="85px" alt="{{ produit[2] }}" title="{{ produit[2] }}" /></td>                            <td>{{ produit[2] }}</td>                            <td>{{ produit[3] }}</td>                            <td>{{ produit[4] }}</td>                            <td>{{ (produit[3]*produit[4])|number_format(2,',',' ') }} €</td>                            {% set total = total + (produit[3]*produit[4]) %}                            <td><a href="{{ path('lamaltiere_supprimerProduitPanier', {'idProduit': produit[0] })}}"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/icones/document--minus.png') }}" width="16px" height="16px" title="Supprimer" alt="Supprimer" /></a></td>                        </tr>                    {% endfor %}                </tbody>            </table>                    <p class="total">{% if app.session.get('lang') == 'fr' %}Total de votre commande{% else %}Total of your order{% endif %} : {{ total|number_format(2,',',' ') }} € / {% if app.session.get('lang') == 'fr' %}Frais de port inclus{% else %}Including shipping costs{% endif %}</p>            </center>                                <form method="GET" action="{{ path('lamaltiere_commande') }}">                 <input type='submit' value="{% if app.session.get('lang') == 'fr' %}Commander{% else %}Order{% endif %}" />            </form>        {% endif %}</section>{% endblock %}
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+    <h2>{% trans from "magasin" %}magasin.moteur.titre{% endtrans %}<span class="action"><a href="{{ path('lamaltiere_magasin') }}">{% trans from "magasin" %}magasin.retour.magasin{% endtrans %}</a></span></h2>
+        
+        {% set panier = app.session.get('panier') %}
+        
+        {% if app.session.get('panier') == null %}
+            {% trans from "magasin" %}magasin.panier.vide{% endtrans %}<br />
+            {% if mailClient is defined %}
+                <center>
+                    {% trans from "magasin" %}magasin.panier.commandevalidee{% endtrans %}<br />
+                    {% trans from "magasin" %}magasin.panier.emailenvoye{% endtrans %} {{ mail }}.
+                </center>
+            {% endif %}
+        {% else %}
+            <center><table class="panier">
+                    <caption><h4>{% trans from "magasin" %}magasin.panier.recapitulatif{% endtrans %}</h4></caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>{% trans from "magasin" %}magasin.panier.produit{% endtrans %}</th>
+                        <th>{% trans from "magasin" %}magasin.panier.quantite{% endtrans %}</th>
+                        <th>{% trans from "magasin" %}magasin.panier.prixunitaire{% endtrans %}</th>
+                        <th>{% trans from "magasin" %}magasin.panier.total{% endtrans %}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set total = 0 %}
+                    {% for produit in panier %}
+                        <tr>
+                            <td><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/produits/'~ produit[1] ~'/'~ produit[0] ~'/1.jpg') }}" width="140px" height="85px" alt="{{ produit[2] }}" title="{{ produit[2] }}" /></td>
+                            <td>{{ produit[2] }}</td>
+                            <td>{{ produit[3] }}</td>
+                            <td>{{ produit[4] }}</td>
+                            <td>{{ (produit[3]*produit[4])|number_format(2,',',' ') }} €</td>
+                            {% set total = total + (produit[3]*produit[4]) %}
+                            <td><a href="{{ path('lamaltiere_supprimerProduitPanier', {'idProduit': produit[0] })}}"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/icones/document--minus.png') }}" width="16px" height="16px" title="Supprimer" alt="Supprimer" /></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+                    <p class="total">{% trans from "magasin" %}magasin.panier.msgtotal{% endtrans %} : {{ total|number_format(2,',',' ') }} € / {% trans from "magasin" %}magasin.panier.fraisport{% endtrans %}</p>
+            </center>
+                    
+            <form method="GET" action="{{ path('lamaltiere_commande') }}">
+                 <input type='submit' value="{% trans from "magasin" %}magasin.bouton.commander{% endtrans %}" />
+            </form>
+        {% endif %}
+</section>
+{% endblock %}

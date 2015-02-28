@@ -25,16 +25,10 @@ class TypeVideo
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_type_video_fr", type="string", length=100)
+     * @ORM\Column(name="nom_type_video", type="string", length=100)
      */
-    private $nom_type_fr;
-	
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nom_type_video_en", type="string", length=100)
-     */
-    private $nom_type_en;
+    private $nom_type;
+
     
     /**
      * @ORM\OneToMany(targetEntity="Video", mappedBy="type", cascade="remove")
@@ -56,49 +50,26 @@ class TypeVideo
     }
 
     /**
-     * Set nom_type_fr
+     * Set nom_type
      *
-     * @param string $nomTypeFr
+     * @param string $nom_type
      * @return TypeVideo
      */
-    public function setNomTypeFr($nomTypeFr)
+    public function setNom_type($nomType)
     {
-        $this->nom_type_fr = $nomTypeFr;
+        $this->nom_type = $nomType;
     
         return $this;
     }
 
     /**
-     * Get nom_type_fr
+     * Get nom_type
      *
      * @return string 
      */
-    public function getNomTypeFr()
+    public function getNom_type()
     {
-        return $this->nom_type_fr;
-    }
-
-    /**
-     * Set nom_type_en
-     *
-     * @param string $nomTypeEn
-     * @return TypeVideo
-     */
-    public function setNomTypeEn($nomTypeEn)
-    {
-        $this->nom_type_en = $nomTypeEn;
-    
-        return $this;
-    }
-
-    /**
-     * Get nom_type_en
-     *
-     * @return string 
-     */
-    public function getNomTypeEn()
-    {
-        return $this->nom_type_en;
+        return $this->nom_type;
     }
 
     /**

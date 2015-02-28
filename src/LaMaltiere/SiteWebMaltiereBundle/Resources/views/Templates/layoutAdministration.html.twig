@@ -1,1 +1,34 @@
-{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}{% block section %}<section class="conteneur">	{% set lang = app.session.get('lang') %}	<nav class="secondaire">		<ul class="gauche">			<li>				<a href="{{ path('lamaltiere_administration_produits') }}">Produits</a>			</li>			<li>				<a href="{{ path('lamaltiere_administration_press') }}">Presse</a>			</li>			<li>				<a href="{{ path('lamaltiere_administration_liens') }}">Liens</a>			</li>                        <li>				<a href="{{ path('lamaltiere_administration_videos') }}">Videos</a>			</li>		</ul>	</nav>	{% block modele %}	{% endblock %}	<div id="spacer"></div></section>{% endblock %}
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	{% set lang = app.request.getLocale() %}
+	<nav class="secondaire">
+		<ul class="gauche">
+			<li>
+				<a href="{{ path('lamaltiere_administration_categories') }}">Catégories</a>
+			</li>
+			<li>
+				<a href="{{ path('lamaltiere_administration_modeles') }}">Modèles</a>
+			</li>
+			<li>
+				<a href="{{ path('lamaltiere_administration_press') }}">Presse</a>
+			</li>
+			<li>
+				<a href="{{ path('lamaltiere_administration_liens') }}">Liens</a>
+			</li>
+                        <li>
+				<a href="{{ path('lamaltiere_administration_videos') }}">Videos</a>
+			</li>
+            <li><hr /></li>
+            <li>
+                <a href="{{ path('lamaltiere_logout') }}">Se déconnecter</a>
+            </li>
+		</ul>
+	</nav>
+	{% block modele %}
+	{% endblock %}
+	<div id="spacer"></div>
+</section>
+{% endblock %}
+

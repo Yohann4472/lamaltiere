@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="de" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="1">
+                <source>contact.titre</source>
+                <target>In verbindung setzten</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>contact.telecharger.catalogue</source>
+                <target>Herunterladen des katalog und bestellscheins</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>contact.catalogue.titre</source>
+                <target>Katalog</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>contact.boncommande.titre</source>
+                <target>Bestellschein</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>contact.boncommande.phrase1</source>
+                <target>Bestellschein ausfüllen und zurück schicken an die SAS La Maltière.</target>
+            </trans-unit>
+			<trans-unit id="6">
+                <source>contact.boncommande.phrase2</source>
+                <target>Für alle Preisanfragen unserer Produkte zögern Sie nicht uns zu kontaktieren.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

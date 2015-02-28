@@ -48,7 +48,7 @@ class VideosController extends Controller
                 }
             }
             
-            return $this->chargerVideos(false);
+            return $this->chargerVideos(false, 0);
 	}
         
         private function creerVideo(Request $request){
@@ -86,6 +86,6 @@ class VideosController extends Controller
             $em->remove($entity);
             $em->flush();
             
-            return $this->chargerVideos(false);
+            return $this->chargerVideos(false,0);
 	}
 }

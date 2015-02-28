@@ -20,16 +20,16 @@ header{
 
 .contact{
 	width					:		400px;
-	height					:		25px;
-	text-decoration                         :		none;
+	height					:		30px;
+	text-decoration         :		none;
 	text-align				:		right;
 	float					:		right;
 }
 
 .contact img {
-	vertical-align                           :		middle;
-	width					:		20px;
-	height					:		20px;
+	vertical-align          :		middle;
+	width					:		25px;
+	height					:		25px;
 }
 
 header .logo {
@@ -44,6 +44,7 @@ header .logo {
 .logo img{
 	width					:		190px;
 	height					:		70px;
+        margin-left                             :               30px;
 }
 
 section{
@@ -69,8 +70,9 @@ section{
 
 .presentation ul{
 	width					:		795px;
-	height					:		135px;
-	margin					:		auto;
+	height					:		180px;
+	margin-left				:		auto;
+	margin-right			:		auto;
 }
 
 .presentation li{
@@ -100,12 +102,14 @@ iframe
 }
 
 figure {
+	vertical-align			:		top;
 	margin					:		0px 0px 6px 0px;
 	display					: 		inline-block;
 }
 
 figcaption{
 	text-align				:		center;
+	width					:		189px;
 }
 
 .article{

@@ -1,1 +1,28 @@
-{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}{% block section %}<section class="conteneur">    <h2>{% if app.session.get('lang') == 'fr' %}{{ typeVideos.getNomTypeFr() }}{% else %}{{ typeVideos.getNomTypeEn() }}{% endif %}</h2>    <div id='slider' class='swipe' style="max-width:600px; height: 350px;">          <div class='swipe-wrap'>            {% for video in typeVideos.videos %}                <div>                   <object id="videoSlider" type="text/html" data="{{ video.url }}" width="600" height="350"></object>                </div>              {% endfor %}        </div>        <span class="nav prev">Prev</span>        <span class="nav next">Next</span>			    </div>    <script type="text/javascript">        $(document).ready(function() {            Slider = $('#slider').Swipe({                            continuous: true            }).data('Swipe');            $('.next').on('click', Slider.next);            $('.prev').on('click', Slider.prev);        });    </script></section>{% endblock %}
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+    <h2>{% trans from "medias" %}medias.videoclients.titre{% endtrans %}</h2>
+    <div id='slider' class='swipe' style="max-width:600px; height: 350px;">  
+        <div class='swipe-wrap'>
+            {% for video in typeVideos.videos %}
+                <div>
+                   <object id="videoSlider" type="text/html" data="{{ video.url }}" width="600" height="350"></object>
+                </div>  
+            {% endfor %}
+        </div>
+        <span class="nav prev">{% trans from "barqueRemorque" %}slider.bouton.precedent{% endtrans %}</span>
+        <span class="nav next">{% trans from "barqueRemorque" %}slider.bouton.suivant{% endtrans %}</span>			
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Slider = $('#slider').Swipe({
+                            continuous: true
+            }).data('Swipe');
+
+            $('.next').on('click', Slider.next);
+            $('.prev').on('click', Slider.prev);
+        });
+    </script>
+</section>
+{% endblock %}

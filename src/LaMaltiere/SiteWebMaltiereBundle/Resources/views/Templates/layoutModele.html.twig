@@ -2,29 +2,28 @@
 
 {% block section %}
 <section class="conteneur">
-	{% set lang = app.session.get('lang') %}
 	<nav class="secondaire">
 		<ul class="gauche">
-			{% if produits.id < 3 %}
+			{% if produit.id < 3 %}
                         <li id="0">
-                            <a href="{{ path('lamaltiere_produit', {'idProduit': produits.id}) }}#0">{% if lang == 'fr' %}Caractéristiques techniques{% else %}Design Features{% endif %}</a>
+                            <a href="{{ path('lamaltiere_produit', {'idProduit': produit.id}) }}#0">{% trans from "barqueRemorque" %}barque.caracteristique.technique.titre{% endtrans %}</a>
                         </li>
 			{% endif %}
-			{% for categorie in produits.categories %}
-                                {% if produits.categories|length > 0 %}
-                                    <li id="{{ categorie.id }}">
-                                        <a href="#{{ categorie.id }}">{% if lang == 'fr' %}{{ categorie.libelle_fr }}{% else %}{{ categorie.libelle_en }}{% endif %}</a>
-                                            {% if categorie.modeles|length > 0 %}
-                                                    <ul class="sub-menu">
-                                                    {% for modele in categorie.modeles %}
-                                                        {% if modele.boutique_modele ==  false %}
-                                                            <li><a href="{{ path('lamaltiere_getProduit', {'idProduit': produits.id, 'idModele': modele.id }) }}#{{ categorie.id }}">{% if lang == 'fr' %}{{ modele.nom_fr }}{% else %}{{ modele.nom_en }}{% endif %}</a></li>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                    </ul>
-                                            {% endif %}
-                                    </li>
-                                {% endif %}
+			{% for categorie in produit.categories %}
+                {% if produit.categories|length > 0 %}
+                    <li id="{{ categorie.id }}">
+                        <a href="#{{ categorie.id }}">{{ categorie.libelle }}</a>
+                            {% if categorie.modeles|length > 0 %}
+                                    <ul class="sub-menu">
+                                    {% for modele in categorie.modeles %}
+                                        {% if modele.boutique_modele ==  false %}
+                                            <li><a href="{{ path('lamaltiere_getProduit', {'idProduit': produit.id, 'idModele': modele.id }) }}#{{ categorie.id }}">{{ modele.nom }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                            {% endif %}
+                    </li>
+                {% endif %}
 			{% endfor %}
 		</ul>
 	</nav>

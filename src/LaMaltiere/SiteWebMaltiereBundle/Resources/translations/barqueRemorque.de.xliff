@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="de" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="1">
+                <source>barque.caracteristique.principal.titre</source>
+                <target>Detailbeschreibung eines Aluminiumbootes</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>barque.caracteristique.technique.titre</source>
+                <target>Technisches Datenblatt</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>barque.caracteristique.technique.contenu</source>
+                <target>Rumpf mit Flach Boden, Ausschnitte, Zuzammensetzen, Verbunden, geschweißtes Aluminium, hoch Widerstandsfähig und Abschlüsse in Silikon 
+                        Alle unser Boot sind vollständig aus eigener Herstellung.
+                        Bodenstärke 2mm, Seitlichen Schutz und Verstärkungsrippen in einer Stärke von 1,5mm.
+                        Heckwand 2mm für weitere Verstärkung vorgesehen. 
+                        Schrank mit integriertem Schwimmkörper.</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>barque.caracteristique.stabilite.titre</source>
+                <target>Stabilität Test</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>barque.caracteristique.equipement.titre</source>
+                <target>Ausrüstung</target>
+            </trans-unit>
+			<trans-unit id="6">
+                <source>barque.caracteristique.equipement.contenu</source>
+                <target>Hintere Truhe robuster Schließe für Vorhängeschloss. Sitzbank aus Wasserfestem Sperrholz. Flaschenzüge und. ( Waben ) Zwei Holzruder mit Riemenauflage aus Messing. Stütze bronze . Scharniere aus Aluminium.</target>
+            </trans-unit>
+			<trans-unit id="7">
+                <source>barque.caracteristique.remarques.titre</source>
+                <target>Bemerkungen</target>
+            </trans-unit>
+			<trans-unit id="8">
+                <source>barque.caracteristique.remarques.contenu</source>
+                <target>Alles unsere Boote werden auf individuelle Bestellung gefertigt Alle Anfertigungen können auf individuellen Kundenwunsch gefertigt werden. Die gezeigten Beispiele auf unserer Internet Seite zeigen spezielle Kundenanfertigungen. Ausführungsdaten sind für einen Tiefgang von 100mm ausgelegt.</target>
+            </trans-unit>
+			<trans-unit id="9">
+                <source>remorque.pam.titre</source>
+                <target>Anhänger - Pam Rocca Nautilus A.I.N</target>
+            </trans-unit>
+			<trans-unit id="10">
+                <source>remorque.pam.contenu</source>
+                <target>Optionen :</target>
+            </trans-unit>
+			<trans-unit id="11">
+                <source>remorque.pam.contenu.rouesecours</source>
+                <target>Ersatzrad</target>
+            </trans-unit>
+			<trans-unit id="12">
+                <source>remorque.pam.contenu.supportroue</source>
+                <target>Rad Stütze</target>
+            </trans-unit>
+			<trans-unit id="13">
+                <source>remorque.pam.contenu.autres</source>
+                <target>- Diebstahlsicherung Setzten Sie sich bitte mit uns in Verbindung.</target>
+            </trans-unit>
+			<trans-unit id="14">
+                <source>remorque.caracteristique.titre</source>
+                <target>Beschreibungdetaills eines Anhängers</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>slider.bouton.precedent</source>
+                <target>Früher</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>slider.bouton.suivant</source>
+                <target>Als Nächstes</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>barque.label.capacite</source>
+                <target>Fassungsvermögen</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>barque.label.moteur</source>
+                <target>Motor</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>barque.label.longueur</source>
+                <target>Länge</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>barque.label.largeur</source>
+                <target>Breite</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>barque.label.hauteur</source>
+                <target>Höhe</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>barque.label.poids</source>
+                <target>Gewicht</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>barque.label.charge</source>
+                <target>Baladen</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>remorque.label.chargeutile</source>
+                <target>Ladung*</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>remorque.label.ptc</source>
+                <target>PTC</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>remorque.label.longueurbateau</source>
+                <target>Bootslänge</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>remorque.label.longueurremorque</source>
+                <target>Länge Anhänger*</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>remorque.label.largeurremorque</source>
+                <target>Breite Anhänger*</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>remorque.label.nbrouleaux</source>
+                <target>Anzahl rollen</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>remorque.label.roues</source>
+                <target>Räder</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>remorque.message.caracteristique</source>
+                <target>Diese Eigenschaften hängen von der Version des Boot</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

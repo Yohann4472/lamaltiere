@@ -25,16 +25,9 @@ class TypeSite
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_type_site_fr", type="string", length=255)
+     * @ORM\Column(name="nom_type_site", type="string", length=255)
      */
-    private $nom_type_fr;
-	
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nom_type_site_en", type="string", length=255)
-     */
-    private $nom_type_en;
+    private $nom_type;
 	
     /**
      * @ORM\OneToMany(targetEntity="Site", mappedBy="type", cascade="remove")
@@ -69,49 +62,26 @@ class TypeSite
     }
 
     /**
-     * Set nom_type_fr
+     * Set nom_type
      *
-     * @param string $nom_type_fr
+     * @param string $nom_type
      * @return Produit
      */
-    public function setNom_type_fr($nom_type_fr)
+    public function setNom_type($nom_type)
     {
-        $this->nom_type_fr = $nom_type_fr;
+        $this->nom_type = $nom_type;
     
         return $this;
     }
 
     /**
-     * Get nom_type_fr
+     * Get nom_type
      *
      * @return string 
      */
-    public function getNom_type_fr()
+    public function getNom_type()
     {
-        return $this->nom_type_fr;
-    }
-	
-	/**
-     * Set nom_type_en
-     *
-     * @param string $nom_type_en
-     * @return Produit
-     */
-    public function setNom_type_en($nom_type_en)
-    {
-        $this->nom_type_en = $nom_type_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get nom_type_en
-     *
-     * @return string 
-     */
-    public function getNom_type_en()
-    {
-        return $this->nom_type_en;
+        return $this->nom_type;
     }
 	
     /**

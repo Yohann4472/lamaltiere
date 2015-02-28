@@ -1,1 +1,27 @@
-{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}{% block section %}<section class="conteneur">	<h2>{% if app.session.get('lang') == 'fr' %}Espace photos clients{% else %}Space pictures customers{% endif %}</h2>        <div id='slider' class='swipe' style="max-width:700px; height: 500px;">  		<div class='swipe-wrap'>                    {% for photo in photos %}                       <div><img src="{{ asset(photo)|replace({'\\': '/' }) }}" width="700px" height="500px" alt="{% if app.session.get('lang') == 'fr' %}Photos clients{% else %}Pictures customers{% endif %}" title="{% if app.session.get('lang') == 'fr' %}Photos clients{% else %}Pictures customers{% endif %}"/></div>                    {% endfor %}		</div>		<span class="nav prev">Prev</span>		<span class="nav next">Next</span>			        </div>        <script type="text/javascript">            $(document).ready(function() {                Slider = $('#slider').Swipe({                                auto: 3000,                                continuous: true                }).data('Swipe');                $('.next').on('click', Slider.next);                $('.prev').on('click', Slider.prev);            });        </script></section>{% endblock %}
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	<h2>{% trans from "medias" %}medias.photosclients.titre{% endtrans %}</h2>
+        <div id='slider' class='swipe' style="max-width:700px; height: 500px;">  
+		<div class='swipe-wrap'>
+                    {% for photo in photos %}
+                       <div><img src="{{ asset(photo)|replace({'\\': '/' }) }}" width="700px" height="500px" alt="{% trans from "medias" %}medias.photosclients.titre{% endtrans %}" title="{% trans from "medias" %}medias.photosclients.titre{% endtrans %}"/></div>
+                    {% endfor %}
+		</div>
+		<span class="nav prev">{% trans from "barqueRemorque" %}slider.bouton.precedent{% endtrans %}</span>
+        <span class="nav next">{% trans from "barqueRemorque" %}slider.bouton.suivant{% endtrans %}</span>			
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                Slider = $('#slider').Swipe({
+                                auto: 3000,
+                                continuous: true
+                }).data('Swipe');
+
+                $('.next').on('click', Slider.next);
+                $('.prev').on('click', Slider.prev);
+            });
+        </script>
+</section>
+{% endblock %}

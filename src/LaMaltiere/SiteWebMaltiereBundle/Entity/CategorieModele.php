@@ -24,20 +24,20 @@ class CategorieModele
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle_cat_modele_fr", type="string", length=255)
+     * @ORM\Column(name="libelle_cat_modele", type="string", length=255)
      */
-    private $libelle_fr;
-	
+    private $libelle;
+
 	/**
      * @var string
      *
-     * @ORM\Column(name="libelle_cat_modele_en", type="string", length=255)
+     * @ORM\Column(name="lang_cat_modele", type="string", length=2)
      */
-    private $libelle_en;
+    private $lang;
 	
     /**
     * @ORM\ManyToOne(targetEntity="LaMaltiere\SiteWebMaltiereBundle\Entity\Produit", inversedBy="categories")
-    * @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit")
+    * @ORM\JoinColumn(name="produit_id", referencedColumnName="id_produit")
     */
     private $produit;
 	
@@ -61,49 +61,49 @@ class CategorieModele
     }
 
     /**
-     * Set libelle_fr
+     * Set libelle
      *
-     * @param string $libelle_fr
-     * @return Produit
+     * @param string $libelle
+     * @return string
      */
-    public function setLibelle_fr($libelle_fr)
+    public function setLibelle($libelle)
     {
-        $this->libelle_fr = $libelle_fr;
+        $this->libelle = $libelle;
     
         return $this;
     }
 
     /**
-     * Get libelle_fr
+     * Get libelle
      *
      * @return string 
      */
-    public function getLibelle_fr()
+    public function getLibelle()
     {
-        return $this->libelle_fr;
+        return $this->libelle;
     }
-	
+
 	/**
-     * Set libelle_en
+     * Set lang
      *
-     * @param string $libelle_en
-     * @return Produit
+     * @param string $lang
+     * @return string
      */
-    public function setLibelle_en($libelle_en)
+    public function setLang($lang)
     {
-        $this->libelle_en = $libelle_en;
-    
+        $this->lang = $lang;
+
         return $this;
     }
 
     /**
-     * Get libelle_en
+     * Get lang
      *
-     * @return string 
+     * @return string
      */
-    public function getLibelle_en()
+    public function getLang()
     {
-        return $this->libelle_en;
+        return $this->lang;
     }
 
     /**

@@ -1,9 +1,9 @@
 .principal{
 	position				:		relative;
 	height					:		100%;
-	width					:		690px;
-	float					:		left;
-	margin-left				:		30px;
+	width					:		735px;
+	float					:		right;
+	margin-right				:		20px;
 }
 
 .principal ul ul {
@@ -52,8 +52,8 @@
 .principal ul li a {
 	display: block; 
 	padding: 10px 9px;
-	font: 13pt Arial, sans-serif;
-	color: #757575; 
+	font: bold 13pt Arial, sans-serif;
+	color: rgb(252,102,0); //#757575
 	text-decoration: none;
 }
 	

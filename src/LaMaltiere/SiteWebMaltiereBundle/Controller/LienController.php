@@ -7,81 +7,21 @@ use Symfony\Component\HttpFoundation\Request;
 
 class LienController extends Controller
 {
-	public function chargerAction()
-	{
-            return $this->chargerLiens(true);
-	}
-        
-        public function chargerLiensAdminAction()
-	{
-            return $this->chargerLiens(false);
-	}
-        
-        private function chargerLiens($accueil){
-            $liens = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:TypeSite')->findAll();
-            
-            if($accueil){
-                return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:liens.html.twig', array(
-                    'liens' => $liens
-                ));
-            }else{
-                return $this->render('LaMaltiereSiteWebMaltiereBundle:Admin:adminLiens.html.twig', array(
-                    'liens' => $liens
-                ));
-            }
-        }
-        
-        public function enregistrerTypeAction(Request $request)
-	{
-            if ($request->isMethod('POST')) {
-                if($request->request->get('id') == ""){
-                    $this->creerType($request);
-                }else {
-                    $this->modifierType($request);
-                }
-            }
-            
-            return $this->chargerLiens(false);
-	}
-        
-        private function creerType(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
-            $type = new \LaMaltiere\SiteWebMaltiereBundle\Entity\TypeSite();
-            $type->setId($request->request->get('id'));
-            $type->setNom_type_fr($request->request->get('libelleFr'));
-            $type->setNom_type_en($request->request->get('libelleEn'));
-            
-            $em->persist($type);
-            $em->flush();
-        }
-        
-        private function modifierType(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
-            $type = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:TypeSite')->find($request->request->get('id'));
+	public function chargerLiensAction(){
+        $liens = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:TypeSite')->findAll();
 
-            if (!$type){
-                throw $this->createNotFoundException(
-                    'Aucun type de site trouvé pour cet id : '.$request->request->get('id')
-                );
-            }
-
-            $type->setNom_type_fr($request->request->get('libelleFr'));
-            $type->setNom_type_en($request->request->get('libelleEn'));
-            $em->flush();
+        if (false === $this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:liens.html.twig', array(
+                'liens' => $liens
+            ));
+        }else{
+            return $this->render('LaMaltiereSiteWebMaltiereBundle:Admin:adminLiens.html.twig', array(
+                'liens' => $liens
+            ));
         }
-        
-        public function supprimerTypeAction($id)
-	{
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:TypeSite')->find($id);
-            
-            $em->remove($entity);
-            $em->flush();
-            
-            return $this->chargerLiens(false);
-	}
-        
-        public function enregistrerSiteAction(Request $request)
+    }
+
+    public function enregistrerSiteAction(Request $request)
 	{
             if ($request->isMethod('POST')) {
                 if($request->request->get('id') == ""){
@@ -91,7 +31,7 @@ class LienController extends Controller
                 }
             }
             
-            return $this->chargerLiens(false);
+            return $this->chargerLiensAction();
 	}
         
         private function creerSite(Request $request)
@@ -136,7 +76,7 @@ class LienController extends Controller
             $em->remove($entity);
             $em->flush();
             
-            return $this->chargerLiens(false);
+            return $this->chargerLiensAction();
 	}
 }
 

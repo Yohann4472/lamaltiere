@@ -7,51 +7,43 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PresseController extends Controller
 {
-	public function chargerAction()
-	{
-		return $this->chargerArticles(true);
-	}
-        
-        public function chargerArticlesAdminAction()
-	{
-		return $this->chargerArticles(false);
-	}
-        
-        private function chargerArticles($accueil){
+    public function chargerArticlesAction(){
+        if (false === $this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $articles = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Article')->findBy(
+            array(
+                'lang' => $this->get('request')->getLocale()
+            ));
+            return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:presse.html.twig', array(
+                'articles' => $articles
+            ));
+        }else{
             $articles = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Article')->findAll();
-		
-            if($accueil){
-                return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:presse.html.twig', array(
-                    'articles' => $articles
-                ));
-            }else{
-                return $this->render('LaMaltiereSiteWebMaltiereBundle:Admin:adminPresse.html.twig', array(
-                    'articles' => $articles
-                ));
+            return $this->render('LaMaltiereSiteWebMaltiereBundle:Admin:adminPresse.html.twig', array(
+                'articles' => $articles
+            ));
+        }
+    }
+        
+    public function enregistrerArticleAction(Request $request)
+	{
+        if ($request->isMethod('POST')) {
+            if($request->request->get('id') == ""){
+                $this->creerArticle($request);
+            }else {
+                $this->modifierArticle($request);
             }
         }
-        
-        public function enregistrerArticleAction(Request $request)
-	{
-            if ($request->isMethod('POST')) {
-                if($request->request->get('id') == ""){
-                    $this->creerArticle($request);
-                }else {
-                    $this->modifierArticle($request);
-                }
-            }
-            
-            return $this->chargerArticles(false);
+
+        return $this->chargerArticlesAction();
 	}
         
         private function creerArticle(Request $request){
             $em = $this->getDoctrine()->getEntityManager();
             $article = new \LaMaltiere\SiteWebMaltiereBundle\Entity\Article();
             $article->setPublicateur($request->request->get('publicateur'));
-            $article->setDate_fr($request->request->get('dateFr'));
-            $article->setDate_en($request->request->get('dateEn'));
-            $article->setCommentaire_fr($request->request->get('commentaireFr'));
-            $article->setCommentaire_en($request->request->get('commentaireEn'));
+            $article->setDate($request->request->get('date'));
+            $article->setCommentaire($request->request->get('commentaire'));
+            $article->setLang($request->request->get('langue'));
             $article->setChemin($request->request->get('chemin'));
 
             $em->persist($article);
@@ -69,10 +61,9 @@ class PresseController extends Controller
             }
 
             $article->setPublicateur($request->request->get('publicateur'));
-            $article->setDate_fr($request->request->get('dateFr'));
-            $article->setDate_en($request->request->get('dateEn'));
-            $article->setCommentaire_fr($request->request->get('commentaireFr'));
-            $article->setCommentaire_en($request->request->get('commentaireEn'));
+            $article->setDate($request->request->get('date'));
+            $article->setCommentaire($request->request->get('commentaire'));
+            $article->setLang($request->request->get('langue'));
             $article->setChemin($request->request->get('chemin'));
             $em->flush();
         }
@@ -85,6 +76,6 @@ class PresseController extends Controller
             $em->remove($entity);
             $em->flush();
             
-            return $this->chargerArticles(false);
+            return $this->chargerArticlesAction();
 	}
 }

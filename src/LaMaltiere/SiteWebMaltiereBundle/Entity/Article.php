@@ -31,30 +31,16 @@ class Article
 	/**
      * @var string
      *
-     * @ORM\Column(name="date_article_fr", type="string", length=255)
+     * @ORM\Column(name="date_article", type="string", length=255)
      */
-    private $date_fr;
+    private $date;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="date_article_en", type="string", length=255)
+     * @ORM\Column(name="commentaire_article", type="string", length=255)
      */
-    private $date_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="commentaire_article_fr", type="string", length=255)
-     */
-    private $commentaire_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="commentaire_article_en", type="string", length=255)
-     */
-    private $commentaire_en;
+    private $commentaire;
 
     /**
      * @var string
@@ -62,6 +48,13 @@ class Article
      * @ORM\Column(name="chemin_article", type="string", length=255)
      */
     private $chemin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lang_article", type="string", length=2)
+     */
+    private $lang;
 
     /**
      * Get id
@@ -120,94 +113,71 @@ class Article
     }
 
     /**
-     * Set date_fr
+     * Set date
      *
-     * @param string $dateFr
+     * @param string $date
      * @return Article
      */
-    public function setDate_fr($dateFr)
+    public function setDate($date)
     {
-        $this->date_fr = $dateFr;
+        $this->date = $date;
     
         return $this;
     }
 
     /**
-     * Get date_fr
+     * Get date
      *
      * @return string 
      */
-    public function getDate_fr()
+    public function getDate()
     {
-        return $this->date_fr;
+        return $this->date;
     }
 
     /**
-     * Set date_en
+     * Set commentaire
      *
-     * @param string $dateEn
+     * @param string $commentaire
      * @return Article
      */
-    public function setDate_en($dateEn)
+    public function setCommentaire($commentaire)
     {
-        $this->date_en = $dateEn;
+        $this->commentaire = $commentaire;
     
         return $this;
     }
 
     /**
-     * Get date_en
+     * Get commentaire
      *
      * @return string 
      */
-    public function getDate_en()
+    public function getCommentaire()
     {
-        return $this->date_en;
+        return $this->commentaire;
     }
 
     /**
-     * Set commentaire_fr
+     * Set lang
      *
-     * @param string $commentaireFr
+     * @param string $lang
      * @return Article
      */
-    public function setCommentaire_fr($commentaireFr)
+    public function setLang($lang)
     {
-        $this->commentaire_fr = $commentaireFr;
+        $this->lang = $lang;
     
         return $this;
     }
 
     /**
-     * Get commentaire_fr
+     * Get lang
      *
      * @return string 
      */
-    public function getCommentaire_fr()
+    public function getLang()
     {
-        return $this->commentaire_fr;
-    }
-
-    /**
-     * Set commentaire_en
-     *
-     * @param string $commentaireEn
-     * @return Article
-     */
-    public function setCommentaire_en($commentaireEn)
-    {
-        $this->commentaire_en = $commentaireEn;
-    
-        return $this;
-    }
-
-    /**
-     * Get commentaire_en
-     *
-     * @return string 
-     */
-    public function getCommentaire_en()
-    {
-        return $this->commentaire_en;
+        return $this->lang;
     }
 }

@@ -23,198 +23,108 @@ class Modele
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_modele_fr", type="string", length=255)
+     * @ORM\Column(name="lang_modele", type="string", length=2)
+     * @ORM\Id
      */
-    private $nom_fr;
+    private $lang;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_modele", type="string", length=255)
+     */
+    private $nom;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="nom_modele_en", type="string", length=255)
+     * @ORM\Column(name="description_modele", type="string", length=1000)
      */
-    private $nom_en;
+    private $description;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="description_modele_fr", type="string", length=1000)
+     * @ORM\Column(name="capacite_modele", type="string", length=30)
      */
-    private $description_fr;
+    private $capacite;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="description_modele_en", type="string", length=1000)
+     * @ORM\Column(name="moteur_modele", type="string", length=15)
      */
-    private $description_en;
+    private $moteur;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="capacite_modele_fr", type="string", length=30)
+     * @ORM\Column(name="longueur_bateau_modele", type="string", length=10)
      */
-    private $capacite_fr;
+    private $longueur_bateau;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="capacite_modele_en", type="string", length=30)
+     * @ORM\Column(name="longueur_remorque_modele", type="string", length=10)
      */
-    private $capacite_en;
+    private $longueur_remorque;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="moteur_modele_fr", type="string", length=15)
+     * @ORM\Column(name="largeur_bateau_modele", type="string", length=10)
      */
-    private $moteur_fr;
+    private $largeur_bateau;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="moteur_modele_en", type="string", length=15)
+     * @ORM\Column(name="largeur_remorque_modele", type="string", length=10)
      */
-    private $moteur_en;
+    private $largeur_remorque;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="longueur_bateau_modele_fr", type="string", length=10)
+     * @ORM\Column(name="hauteur_modele", type="string", length=10)
      */
-    private $longueur_bateau_fr;
+    private $hauteur_modele;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="longueur_bateau_modele_en", type="string", length=10)
+     * @ORM\Column(name="poids_modele", type="string", length=10)
      */
-    private $longueur_bateau_en;
+    private $poids_modele;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="longueur_remorque_modele_fr", type="string", length=10)
+     * @ORM\Column(name="charge_modele", type="string", length=10)
      */
-    private $longueur_remorque_fr;
+    private $charge;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="longueur_remorque_modele_en", type="string", length=10)
+     * @ORM\Column(name="ptc_modele", type="string", length=10)
      */
-    private $longueur_remorque_en;
+    private $ptc;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="largeur_bateau_modele_fr", type="string", length=10)
+     * @ORM\Column(name="nb_rouleaux_modele", type="string", length=40)
      */
-    private $largeur_bateau_fr;
+    private $nb_rouleaux;
 	
 	/**
      * @var string
      *
-     * @ORM\Column(name="largeur_bateau_modele_en", type="string", length=10)
+     * @ORM\Column(name="roues_modele", type="string", length=20)
      */
-    private $largeur_bateau_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="largeur_remorque_modele_fr", type="string", length=10)
-     */
-    private $largeur_remorque_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="largeur_remorque_modele_en", type="string", length=10)
-     */
-    private $largeur_remorque_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="hauteur_modele_fr", type="string", length=10)
-     */
-    private $hauteur_modele_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="hauteur_modele_en", type="string", length=10)
-     */
-    private $hauteur_modele_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="poids_modele_fr", type="string", length=10)
-     */
-    private $poids_modele_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="poids_modele_en", type="string", length=10)
-     */
-    private $poids_modele_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="charge_modele_fr", type="string", length=10)
-     */
-    private $charge_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="charge_modele_en", type="string", length=10)
-     */
-    private $charge_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="ptc_modele_fr", type="string", length=10)
-     */
-    private $ptc_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="ptc_modele_en", type="string", length=10)
-     */
-    private $ptc_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="nb_rouleaux_modele_fr", type="string", length=40)
-     */
-    private $nb_rouleaux_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="nb_rouleaux_modele_en", type="string", length=40)
-     */
-    private $nb_rouleaux_en;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="roues_modele_fr", type="string", length=20)
-     */
-    private $roues_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="roues_modele_en", type="string", length=20)
-     */
-    private $roues_en;
+    private $roues;
 	
 	/**
      * @var string
@@ -246,7 +156,7 @@ class Modele
 	
 	/**
      * @ORM\ManyToOne(targetEntity="LaMaltiere\SiteWebMaltiereBundle\Entity\CategorieModele", inversedBy="modeles")
-     * @ORM\JoinColumn(name="id_cat_modele", referencedColumnName="id_cat_modele")
+     * @ORM\JoinColumn(name="categorie_modele_id", referencedColumnName="id_cat_modele")
      */
     private $categorie;
 	
@@ -274,649 +184,350 @@ class Modele
     }
 
     /**
-     * Set nom_fr
+     * Set lang
      *
-     * @param string $nom_fr
+     * @param string $lang
      * @return string
      */
-    public function setNom_fr($nom_fr)
+    public function setLang($lang)
     {
-        $this->nom_fr = $nom_fr;
+        $this->lang = $lang;
+
+        return $this;
+    }
+
+    /**
+     * Get lang
+     *
+     * @return string
+     */
+    public function getLang()
+    {
+        return $this->lang;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return string
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
     
         return $this;
     }
 
     /**
-     * Get nom_fr
+     * Get nom
      *
      * @return string 
      */
-    public function getNom_fr()
+    public function getNom()
     {
-        return $this->nom_fr;
+        return $this->nom;
     }
 
     /**
-     * Set nom_en
+     * Set description
      *
-     * @param string $nom_en
+     * @param string $description
      * @return string
      */
-    public function setNom_en($nom_en)
+    public function setDescription($description)
     {
-        $this->nom_en = $nom_en;
+        $this->description = $description;
     
         return $this;
     }
 
     /**
-     * Get nom_en
+     * Get description
      *
      * @return string 
      */
-    public function getNom_en()
+    public function getDescription()
     {
-        return $this->nom_en;
+        return $this->description;
     }
 	
 	/**
-     * Set description_fr
+     * Set capacite
      *
-     * @param string $description_fr
+     * @param string $capacite
      * @return string
      */
-    public function setDescription_fr($description_fr)
+    public function setCapacite($capacite)
     {
-        $this->description_fr = $description_fr;
+        $this->capacite = $capacite;
     
         return $this;
     }
 
     /**
-     * Get description_fr
+     * Get capacite
      *
      * @return string 
      */
-    public function getDescription_fr()
+    public function getCapacite()
     {
-        return $this->description_fr;
+        return $this->capacite;
     }
 	
 	/**
-     * Set description_en
+     * Set moteur
      *
-     * @param string $description_en
+     * @param string $moteur
      * @return string
      */
-    public function setDescription_en($description_en)
+    public function setMoteur($moteur)
     {
-        $this->description_en = $description_en;
+        $this->moteur = $moteur;
     
         return $this;
     }
 
     /**
-     * Get description_en
+     * Get moteur
      *
      * @return string 
      */
-    public function getDescription_en()
+    public function getMoteur()
     {
-        return $this->description_en;
+        return $this->moteur;
     }
 	
 	/**
-     * Set capacite_fr
+     * Set longueur_bateau
      *
-     * @param string $capacite_fr
+     * @param string $longueur_bateau
      * @return string
      */
-    public function setCapacite_fr($capacite_fr)
+    public function setLongueur_bateau($longueur_bateau)
     {
-        $this->capacite_fr = $capacite_fr;
+        $this->longueur_bateau = $longueur_bateau;
     
         return $this;
     }
 
     /**
-     * Get capacite_fr
+     * Get longueur_bateau
      *
      * @return string 
      */
-    public function getCapacite_fr()
+    public function getLongueur_bateau()
     {
-        return $this->capacite_fr;
+        return $this->longueur_bateau;
     }
 	
 	/**
-     * Set capacite_en
+     * Set longueur_remorque
      *
-     * @param string $capacite_en
+     * @param string $longueur_remorque
      * @return string
      */
-    public function setCapacite_en($capacite_en)
+    public function setLongueur_remorque($longueur_remorque)
     {
-        $this->capacite_en = $capacite_en;
+        $this->longueur_remorque = $longueur_remorque;
     
         return $this;
     }
 
     /**
-     * Get capacite_en
+     * Get longueur_remorque
      *
      * @return string 
      */
-    public function getCapacite_en()
+    public function getLongueur_remorque()
     {
-        return $this->capacite_en;
+        return $this->longueur_remorque;
     }
 	
 	/**
-     * Set moteur_fr
+     * Set largeur_bateau
      *
-     * @param string $moteur_fr
+     * @param string $largeur_bateau
      * @return string
      */
-    public function setMoteur_fr($moteur_fr)
+    public function setLargeur_bateau($largeur_bateau)
     {
-        $this->moteur_fr = $moteur_fr;
+        $this->largeur_bateau = $largeur_bateau;
     
         return $this;
     }
 
     /**
-     * Get moteur_fr
+     * Get largeur_bateau
      *
      * @return string 
      */
-    public function getMoteur_fr()
+    public function getLargeur_bateau()
     {
-        return $this->moteur_fr;
+        return $this->largeur_bateau;
     }
 	
 	/**
-     * Set moteur_en
+     * Set largeur_remorque
      *
-     * @param string $moteur_en
+     * @param string $largeur_remorque
      * @return string
      */
-    public function setMoteur_en($moteur_en)
+    public function setLargeur_remorque($largeur_remorque)
     {
-        $this->moteur_en = $moteur_en;
+        $this->largeur_remorque = $largeur_remorque;
     
         return $this;
     }
 
     /**
-     * Get moteur_en
+     * Get largeur_remorque
      *
      * @return string 
      */
-    public function getMoteur_en()
+    public function getLargeur_remorque()
     {
-        return $this->moteur_en;
+        return $this->largeur_remorque;
+    }
+
+	/**
+     * Set hauteur_modele
+     *
+     * @param string $hauteur_modele
+     * @return string
+     */
+    public function setHauteur_modele($hauteur_modele)
+    {
+        $this->hauteur_modele = $hauteur_modele;
+    
+        return $this;
+    }
+
+    /**
+     * Get hauteur_modele
+     *
+     * @return string 
+     */
+    public function getHauteur_modele()
+    {
+        return $this->hauteur_modele;
     }
 	
 	/**
-     * Set longueur_bateau_fr
+     * Set poids_modele
      *
-     * @param string $longueur_bateau_fr
+     * @param string $poids_modele
      * @return string
      */
-    public function setLongueur_bateau_fr($longueur_bateau_fr)
+    public function setPoids_modele($poids_modele)
     {
-        $this->longueur_bateau_fr = $longueur_bateau_fr;
+        $this->poids_modele = $poids_modele;
     
         return $this;
     }
 
     /**
-     * Get longueur_bateau_fr
+     * Get poids_modele
      *
      * @return string 
      */
-    public function getLongueur_bateau_fr()
+    public function getPoids_modele()
     {
-        return $this->longueur_bateau_fr;
+        return $this->poids_modele;
     }
 	
 	/**
-     * Set longueur_bateau_en
+     * Set charge
      *
-     * @param string $longueur_bateau_en
+     * @param string $charge
      * @return string
      */
-    public function setLongueur_bateau_en($longueur_bateau_en)
+    public function setCharge($charge)
     {
-        $this->longueur_bateau_en = $longueur_bateau_en;
+        $this->charge = $charge;
     
         return $this;
     }
 
     /**
-     * Get longueur_bateau_en
+     * Get charge
      *
      * @return string 
      */
-    public function getLongueur_bateau_en()
+    public function getCharge()
     {
-        return $this->longueur_bateau_en;
+        return $this->charge;
     }
 	
 	/**
-     * Set longueur_remorque_fr
+     * Set ptc
      *
-     * @param string $longueur_remorque_fr
+     * @param string $ptc
      * @return string
      */
-    public function setLongueur_remorque_fr($longueur_remorque_fr)
+    public function setPtc($ptc)
     {
-        $this->longueur_remorque_fr = $longueur_remorque_fr;
+        $this->ptc = $ptc;
     
         return $this;
     }
 
     /**
-     * Get longueur_remorque_fr
+     * Get ptc
      *
      * @return string 
      */
-    public function getLongueur_remorque_fr()
+    public function getPtc()
     {
-        return $this->longueur_remorque_fr;
+        return $this->ptc;
     }
 	
 	/**
-     * Set longueur_remorque_en
+     * Set nb_rouleaux
      *
-     * @param string $longueur_remorque_en
+     * @param string $nb_rouleaux
      * @return string
      */
-    public function setLongueur_remorque_en($longueur_remorque_en)
+    public function setNb_rouleaux($nb_rouleaux)
     {
-        $this->longueur_remorque_en = $longueur_remorque_en;
+        $this->nb_rouleaux = $nb_rouleaux;
     
         return $this;
     }
 
     /**
-     * Get longueur_remorque_en
+     * Get nb_rouleaux
      *
      * @return string 
      */
-    public function getLongueur_remorque_en()
+    public function getNb_rouleaux()
     {
-        return $this->longueur_remorque_en;
+        return $this->nb_rouleaux;
     }
-	
+
 	/**
-     * Set largeur_bateau_fr
+     * Set roues
      *
-     * @param string $largeur_bateau_fr
+     * @param string $roues
      * @return string
      */
-    public function setLargeur_bateau_fr($largeur_bateau_fr)
+    public function setRoues($roues)
     {
-        $this->largeur_bateau_fr = $largeur_bateau_fr;
+        $this->roues = $roues;
     
         return $this;
     }
 
     /**
-     * Get largeur_bateau_fr
+     * Get roues
      *
      * @return string 
      */
-    public function getLargeur_bateau_fr()
+    public function getRoues()
     {
-        return $this->largeur_bateau_fr;
-    }
-	
-	/**
-     * Set largeur_bateau_en
-     *
-     * @param string $largeur_bateau_en
-     * @return string
-     */
-    public function setLargeur_bateau_en($largeur_bateau_en)
-    {
-        $this->largeur_bateau_en = $largeur_bateau_en;
-    
-        return $this;
+        return $this->roues;
     }
 
-    /**
-     * Get largeur_bateau_en
-     *
-     * @return string 
-     */
-    public function getLargeur_bateau_en()
-    {
-        return $this->largeur_bateau_en;
-    }
-	
-	/**
-     * Set largeur_remorque_fr
-     *
-     * @param string $largeur_remorque_fr
-     * @return string
-     */
-    public function setLargeur_remorque_fr($largeur_remorque_fr)
-    {
-        $this->largeur_remorque_fr = $largeur_remorque_fr;
-    
-        return $this;
-    }
-
-    /**
-     * Get largeur_remorque_fr
-     *
-     * @return string 
-     */
-    public function getLargeur_remorque_fr()
-    {
-        return $this->largeur_remorque_fr;
-    }
-	
-	/**
-     * Set largeur_remorque_en
-     *
-     * @param string $largeur_remorque_en
-     * @return string
-     */
-    public function setLargeur_remorque_en($largeur_remorque_en)
-    {
-        $this->largeur_remorque_en = $largeur_remorque_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get largeur_remorque_en
-     *
-     * @return string 
-     */
-    public function getLargeur_remorque_en()
-    {
-        return $this->largeur_remorque_en;
-    }
-	
-	/**
-     * Set hauteur_modele_fr
-     *
-     * @param string $hauteur_modele_fr
-     * @return string
-     */
-    public function setHauteur_modele_fr($hauteur_modele_fr)
-    {
-        $this->hauteur_modele_fr = $hauteur_modele_fr;
-    
-        return $this;
-    }
-
-    /**
-     * Get hauteur_modele_fr
-     *
-     * @return string 
-     */
-    public function getHauteur_modele_fr()
-    {
-        return $this->hauteur_modele_fr;
-    }
-	
-	/**
-     * Set hauteur_modele_en
-     *
-     * @param string $hauteur_modele_en
-     * @return string
-     */
-    public function setHauteur_modele_en($hauteur_modele_en)
-    {
-        $this->hauteur_modele_en = $hauteur_modele_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get hauteur_modele_en
-     *
-     * @return string 
-     */
-    public function getHauteur_modele_en()
-    {
-        return $this->hauteur_modele_en;
-    }
-	
-	/**
-     * Set poids_modele_fr
-     *
-     * @param string $poids_modele_fr
-     * @return string
-     */
-    public function setPoids_modele_fr($poids_modele_fr)
-    {
-        $this->poids_modele_fr = $poids_modele_fr;
-    
-        return $this;
-    }
-
-    /**
-     * Get poids_modele_fr
-     *
-     * @return string 
-     */
-    public function getPoids_modele_fr()
-    {
-        return $this->poids_modele_fr;
-    }
-	
-	/**
-     * Set poids_modele_en
-     *
-     * @param string $poids_modele_en
-     * @return string
-     */
-    public function setPoids_modele_en($poids_modele_en)
-    {
-        $this->poids_modele_en = $poids_modele_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get poids_modele_en
-     *
-     * @return string 
-     */
-    public function getPoids_modele_en()
-    {
-        return $this->poids_modele_en;
-    }
-	
-	/**
-     * Set charge_fr
-     *
-     * @param string $charge_fr
-     * @return string
-     */
-    public function setCharge_fr($charge_fr)
-    {
-        $this->charge_fr = $charge_fr;
-    
-        return $this;
-    }
-
-    /**
-     * Get charge_fr
-     *
-     * @return string 
-     */
-    public function getCharge_fr()
-    {
-        return $this->charge_fr;
-    }
-	
-	/**
-     * Set charge_en
-     *
-     * @param string $charge_en
-     * @return string
-     */
-    public function setCharge_en($charge_en)
-    {
-        $this->charge_en = $charge_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get charge_en
-     *
-     * @return string 
-     */
-    public function getCharge_en()
-    {
-        return $this->charge_en;
-    }
-	
-	/**
-     * Set ptc_fr
-     *
-     * @param string $ptc_fr
-     * @return string
-     */
-    public function setPtc_fr($ptc_fr)
-    {
-        $this->ptc_fr = $ptc_fr;
-    
-        return $this;
-    }
-
-    /**
-     * Get ptc_fr
-     *
-     * @return string 
-     */
-    public function getPtc_fr()
-    {
-        return $this->ptc_fr;
-    }
-	
-	/**
-     * Set ptc_en
-     *
-     * @param string $ptc_en
-     * @return string
-     */
-    public function setPtc_en($ptc_en)
-    {
-        $this->ptc_en = $ptc_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get ptc_en
-     *
-     * @return string 
-     */
-    public function getPtc_en()
-    {
-        return $this->ptc_en;
-    }
-	
-	/**
-     * Set nb_rouleaux_fr
-     *
-     * @param string $nb_rouleaux_fr
-     * @return string
-     */
-    public function setNb_rouleaux_fr($nb_rouleaux_fr)
-    {
-        $this->nb_rouleaux_fr = $nb_rouleaux_fr;
-    
-        return $this;
-    }
-
-    /**
-     * Get nb_rouleaux_fr
-     *
-     * @return string 
-     */
-    public function getNb_rouleaux_fr()
-    {
-        return $this->nb_rouleaux_fr;
-    }
-	
-	/**
-     * Set nb_rouleaux_en
-     *
-     * @param string $nb_rouleaux_en
-     * @return string
-     */
-    public function setNb_rouleaux_en($nb_rouleaux_en)
-    {
-        $this->nb_rouleaux_en = $nb_rouleaux_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get nb_rouleaux_en
-     *
-     * @return string 
-     */
-    public function getNb_rouleaux_en()
-    {
-        return $this->nb_rouleaux_en;
-    }
-	
-	/**
-     * Set roues_fr
-     *
-     * @param string $roues_fr
-     * @return string
-     */
-    public function setRoues_fr($roues_fr)
-    {
-        $this->roues_fr = $roues_fr;
-    
-        return $this;
-    }
-
-    /**
-     * Get roues_fr
-     *
-     * @return string 
-     */
-    public function getRoues_fr()
-    {
-        return $this->roues_fr;
-    }
-	
-	/**
-     * Set roues_en
-     *
-     * @param string $roues_en
-     * @return string
-     */
-    public function setRoues_en($roues_en)
-    {
-        $this->roues_en = $roues_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get roues_en
-     *
-     * @return string 
-     */
-    public function getRoues_en()
-    {
-        return $this->roues_en;
-    }
-	
 	/**
      * Set prix_modele
      *

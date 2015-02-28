@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="1">
+                <source>barque.caracteristique.principal.titre</source>
+                <target>Description détaillée d'une barque aluminium</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>barque.caracteristique.technique.titre</source>
+                <target>Caractéristiques techniques</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>barque.caracteristique.technique.contenu</source>
+                <target>Coque à fond plat, découpe, assemblage, mise en forme, soudée en aluminium de haute résistance et joints silicones.
+                        Tous nos bateaux sont fabriqués entièrement par nos soins.
+                        Fond de 2 mm d'épaisseur avec renforts de protection.
+                        Cotés latéraux de 1,5 mm avec nervures.
+                        Tableau arrière de 2 mm prévu pour renfort moteur. 
+                        Caisson avec réserve de flottabilité.</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>barque.caracteristique.stabilite.titre</source>
+                <target>Tests de stabilité</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>barque.caracteristique.equipement.titre</source>
+                <target>Équipements</target>
+            </trans-unit>
+			<trans-unit id="6">
+                <source>barque.caracteristique.equipement.contenu</source>
+                <target>Coffre arrière avec robuste fermeture à cadenasser. Assises recouvertes de contreplaqué marin. Poulies et taquets de descente de poids. Alvéoles pour accrochage (bourriche, seau à vifs, ...). Rames en bois avec tolets en laiton. Support de dame de nage en bronze. Charnières en aluminium.</target>
+            </trans-unit>
+			<trans-unit id="7">
+                <source>barque.caracteristique.remarques.titre</source>
+                <target>Remarques</target>
+            </trans-unit>
+			<trans-unit id="8">
+                <source>barque.caracteristique.remarques.contenu</source>
+                <target>Toutes nos barques sont fabriquées à la demande, en dehors de la forme générale, toutes modifications peuvent etre apportées à votre convenance. Les modifications vues sur ce site sont des demandes de clients. Charge donnée à titre indicatif pour un tirant d'eau de 10 cm.</target>
+            </trans-unit>
+			<trans-unit id="9">
+                <source>remorque.pam.titre</source>
+                <target>Les remorques - Pam Rocca Nautilus A.I.N</target>
+            </trans-unit>
+			<trans-unit id="10">
+                <source>remorque.pam.contenu</source>
+                <target>Pour ajouter les options suivantes :</target>
+            </trans-unit>
+			<trans-unit id="11">
+                <source>remorque.pam.contenu.rouesecours</source>
+                <target>Roue de secours</target>
+            </trans-unit>
+			<trans-unit id="12">
+                <source>remorque.pam.contenu.supportroue</source>
+                <target>Support de roue</target>
+            </trans-unit>
+			<trans-unit id="13">
+                <source>remorque.pam.contenu.autres</source>
+                <target>- Clé antivol - etc... nous consulter.</target>
+            </trans-unit>
+			<trans-unit id="14">
+                <source>remorque.caracteristique.titre</source>
+                <target>Description détaillée d'une remorque</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>slider.bouton.precedent</source>
+                <target>Préc.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>slider.bouton.suivant</source>
+                <target>Suiv.</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>barque.label.capacite</source>
+                <target>Capacité</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>barque.label.moteur</source>
+                <target>Moteur</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>barque.label.longueur</source>
+                <target>Longueur</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>barque.label.largeur</source>
+                <target>Largeur</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>barque.label.hauteur</source>
+                <target>Hauteur</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>barque.label.poids</source>
+                <target>Poids</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>barque.label.charge</source>
+                <target>Charge</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>remorque.label.chargeutile</source>
+                <target>Charge utile*</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>remorque.label.ptc</source>
+                <target>PTC</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>remorque.label.longueurbateau</source>
+                <target>Longueur bateau</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>remorque.label.longueurremorque</source>
+                <target>Longueur remorque*</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>remorque.label.largeurremorque</source>
+                <target>Largeur remorque*</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>remorque.label.nbrouleaux</source>
+                <target>Nombre rouleaux</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>remorque.label.roues</source>
+                <target>Roues</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>remorque.message.caracteristique</source>
+                <target>Ces caractéristiques varient en fonction de la version du bateau</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

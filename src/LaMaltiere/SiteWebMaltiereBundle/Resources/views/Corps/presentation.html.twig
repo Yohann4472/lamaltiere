@@ -1,1 +1,47 @@
-{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}{% block section %}<section class="conteneur">	{% if app.session.get('lang') == 'fr' %}		<h2>Présentation de l'entreprise</h2>	{% else %}		<h2>Presentation of the company</h2>	{% endif %}	<div class="presentation">                <iframe class="video" width="400" height="222" src="//www.youtube.com/embed/Ut3dfdRX-xI" frameborder="0" allowfullscreen></iframe>                <p>			{% if app.session.get('lang') == 'fr' %}				<span class="gras">LA MALTIERE</span> est une fabrique artisanale française de barques de pêcheurs et de bateaux en aluminium soudés.<br />				<span class="gras">Nos barques peuvent s'adapter à la demande du client.</span><br /><br />				Nos barques sont vendues en France, Belgique, Suisse, Cameroun, Nouvelle Calédonie, Vietnam, Niger, Maroc, Congo, Saint Barth (Antilles). Elles sont homologuées C.E et immatriculables en catégorie D.<br /><br />				Longueur : De 2.70 m à 5.00 m<br />				Poids : De 31 Kg à 85 Kg<br /><br />				A partir de {{ prix }}.<br />			{% else %}				<span class="gras">The MALTIERE</span> is a specialized small factory using experienced craftsmen manufacturing all-welded fishing boats.<br /> 				<span class="gras">Our boats can be customized according to the customers requirements.</span><br /><br />				Our boats are sold in France, Belgium, Switzerland (Swiss), Cameroon, New Caledonia, Vietnam, Niger, Maroc, Congo, Saint Barth (Antilles). They are approved to E.U. standards and can be registrered in category D.<br /><br />				Length : From 2.70 m to 5.00 m<br />				Weight : From 31 Kg to 85 Kg<br /><br />				From {{ prix }}.<br />			{% endif %}		</p>		<ul>			<li>				<figure>					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FabricationArtisanale.jpg') }}" alt="{% if app.session.get('lang') == 'fr' %}Fabrication artisanale Française{% else %}French craft manufacturing{% endif %}" title="{% if app.session.get('lang') == 'fr' %}Fabrication artisanale Française{% else %}French craft manufacturing{% endif %}" />					<figcaption>{% if app.session.get('lang') == 'fr' %}Fabrication artisanale Française{% else %}French craft manufacturing{% endif %}</figcaption>				</figure>			</li>  			<li>				<figure>					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FacileTransporter.jpg') }}" alt="{% if app.session.get('lang') == 'fr' %}Facile à transporter - Léger{% else %}Easy to transport - Light{% endif %}" title="{% if app.session.get('lang') == 'fr' %}Facile à transporter - Léger{% else %}Easy to transport - Light{% endif %}" />					<figcaption>{% if app.session.get('lang') == 'fr' %}Facile à transporter - Léger{% else %}Easy to transport - Light{% endif %}</figcaption>				</figure>			</li>			<li>				<figure>					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/EntierementModifiable.jpg') }}" alt="{% if app.session.get('lang') == 'fr' %}Entièrement modifiable{% else %}Fully customizable{% endif %}" title="{% if app.session.get('lang') == 'fr' %}Entièrement modifiable{% else %}Fully customizable{% endif %}" />					<figcaption>{% if app.session.get('lang') == 'fr' %}Entièrement modifiable{% else %}Fully customizable{% endif %}</figcaption>				</figure>			</li>  			<li>				<figure>					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/StabiliteUnique.jpg') }}" alt="{% if app.session.get('lang') == 'fr' %}Stabilité unique{% else %}Unrivaled stability{% endif %}" title="{% if app.session.get('lang') == 'fr' %}Stabilité unique{% else %}Univalled stability{% endif %}" />					<figcaption>{% if app.session.get('lang') == 'fr' %}Stabilité unique{% else %}Unrivaled stability{% endif %}</figcaption>				</figure>			</li>						</ul>	</div></section>{% endblock %}
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	<h2>{% trans from "accueil" %}accueil.entreprise.titre{% endtrans %}</h2>
+	<div class="presentation">
+                <iframe class="video" width="400" height="212" src="{% trans from "accueil" %}accueil.entreprise.lienvideoyoutube{% endtrans %}" frameborder="0" allowfullscreen></iframe>
+        <p>
+            <span class="gras">{% trans from "accueil" %}accueil.entreprise.texte.denomination{% endtrans %}</span>
+            {% trans from "accueil" %}accueil.entreprise.texte.phrase1{% endtrans %}<br />
+            <span class="gras">{% trans from "accueil" %}accueil.entreprise.texte.phrase2{% endtrans %}</span><br /><br />
+            {% trans from "accueil" %}accueil.entreprise.texte.phrase3{% endtrans %}<br /><br />
+            {% trans from "accueil" %}accueil.entreprise.texte.longeur{% endtrans %}<br />
+            {% trans from "accueil" %}accueil.entreprise.texte.poids{% endtrans %}<br /><br />
+            {% trans from "accueil" %}accueil.entreprise.texte.prix{% endtrans %} {{ prix }}.
+            <br />
+		</p>
+        
+		<ul>
+			<li>
+				<figure>
+					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FabricationArtisanale.jpg') }}" alt="{% trans from "accueil"  %}accueil.entreprise.image.fabrication{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.fabrication{% endtrans %}" />
+					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.fabrication{% endtrans %}</figcaption>
+				</figure>
+			</li>  
+			<li>
+				<figure>
+					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FacileTransporter.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.transport{% endtrans %}" title="{% trans from "accueil"  %}accueil.entreprise.image.transport{% endtrans %}" />
+					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.transport{% endtrans %}</figcaption>
+				</figure>
+			</li>
+			<li>
+				<figure>
+					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/EntierementModifiable.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}" />
+					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}</figcaption>
+				</figure>
+			</li>  
+			<li>
+				<figure>
+					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/StabiliteUnique.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}" />
+					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}</figcaption>
+				</figure>
+			</li>				
+		</ul>
+	</div>
+</section>
+{% endblock %}

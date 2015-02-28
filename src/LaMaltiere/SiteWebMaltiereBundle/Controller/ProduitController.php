@@ -2,6 +2,7 @@
 
 namespace LaMaltiere\SiteWebMaltiereBundle\Controller;
 
+use LaMaltiere\SiteWebMaltiereBundle\Entity\Produit;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,43 +10,46 @@ use Symfony\Component\HttpFoundation\Request;
 class ProduitController extends Controller
 {
 	public function chargerProduitAction($idProduit){
-            return $this->chargerProduit(true, $idProduit);
+        $produit = $this->rechercherProduitHorsMagasin($idProduit);
+
+        $finder = new Finder();
+        $finder->files()->in('bundles/lamaltieresitewebmaltiere/images/produits/stabilite');
+
+        return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:caracteristiques.html.twig', array(
+            'produit' => $produit, 'images' => $finder
+        ));
 	}
-        
-        public function chargerProduitsAdminAction()
-	{
-            return $this->chargerProduit(false, null);
-	}
-        
-        private function chargerProduit($accueil, $idProduit){
-            if($accueil){
-                $produits = $this->rechercherProduitHorsMagasin($idProduit);
-                $finder = new Finder();
-                $finder->files()->in('bundles/lamaltieresitewebmaltiere/images/produits/stabilite');
-                return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:caracteristiques.html.twig', array(
-                    'produits' => $produits, 'idProduit' => $idProduit, 'images' => $finder
-                ));
-            }else{
-                $produits = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Produit')->findAll();
-                return $this->render('LaMaltiereSiteWebMaltiereBundle:Admin:adminProduits.html.twig', array(
-                    'produits' => $produits
-                ));
-            }
-        }
+
+	public function chargerProduitsAdminAction(){
+        $produits = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Produit')->findAll();
+            return $this->render('LaMaltiereSiteWebMaltiereBundle:Admin:adminCategories.html.twig', array(
+                'produits' => $produits
+            ));
+    }
 	
 	public function recupererUnModeleAction($idProduit, $idModele){
-		$produits = $this->rechercherProduitHorsMagasin($idProduit);
-		$modeles = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Modele')->find($idModele);
+		$produit = $this->rechercherProduitHorsMagasin($idProduit);
+
+
+		$qb = $this->getDoctrine()->getManager()->createQueryBuilder();
+        $qb->select('m')
+            ->from('LaMaltiereSiteWebMaltiereBundle:Modele', 'm')
+            ->where($qb->expr()->andX(
+                $qb->expr()->eq('m.id', '?1'),
+                $qb->expr()->eq('m.lang', '?2')
+            ));
+        $modele = $qb->getQuery()->setParameters(array(1 => $idModele, 2 => $this->get('request')->getLocale()))->getSingleResult();
+
 		$images = $this->recupererPhotos($idModele, $idProduit);
                 
-		if (!$modeles) {
+		if (!$modele) {
 			throw $this->createNotFoundException(
-				'Aucun produit trouv� pour ce num�ro : '.$idModele
+				'Aucun produit trouvé pour ce numéro : '.$idModele
 			);
 		}
 		
 		return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:modele.html.twig', array(
-			'produits' => $produits, 'modele' => $modeles, 'images' => $images
+			'produit' => $produit, 'modele' => $modele, 'images' => $images
 		));
 	}
 
@@ -57,9 +61,18 @@ class ProduitController extends Controller
                 ->join('c.modeles', 'm')
                 ->where($qb->expr()->andX(
                     $qb->expr()->eq('p.id', '?1'),
-                    $qb->expr()->eq('m.boutique_modele', '?2')
+                    $qb->expr()->eq('c.lang', '?2'),
+                    $qb->expr()->eq('m.boutique_modele', '?3')
                 ));
-            return $qb->getQuery()->setParameters(array(1 => $idProduit, 2 => false))->getSingleResult();
+
+            $produit = new Produit();
+            try{
+                $produit = $qb->getQuery()->setParameters(array(1 => $idProduit, 2 => $this->get('request')->getLocale(), 3 => false))->getSingleResult();
+            }catch(\Doctrine\Orm\NoResultException $e){
+                $produit->setId($idProduit);
+            }
+            return $produit;
+
         }
         
         private function recupererPhotos($idModele,$produit){
@@ -78,14 +91,14 @@ class ProduitController extends Controller
                 }
             }
             
-            return $this->chargerProduit(false, null);
+            return $this->chargerProduitsAdminAction(1);
 	}
         
         private function creerCategorie(Request $request){
             $em = $this->getDoctrine()->getEntityManager();
             $categorie = new \LaMaltiere\SiteWebMaltiereBundle\Entity\CategorieModele();
-            $categorie->setLibelle_fr($request->request->get('libelleFr'));
-            $categorie->setLibelle_en($request->request->get('libelleEn'));
+            $categorie->setLibelle($request->request->get('libelle'));
+            $categorie->setLang($request->request->get('langue'));
             $produit = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:Produit')->find($request->request->get('produit'));
             $categorie->setProduit($produit);
 
@@ -103,8 +116,8 @@ class ProduitController extends Controller
                 );
             }
 
-            $categorie->setLibelle_fr($request->request->get('libelleFr'));
-            $categorie->setLibelle_en($request->request->get('libelleEn'));
+            $categorie->setLibelle($request->request->get('libelle'));
+            $categorie->setLang($request->request->get('langue'));
             $produit = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:Produit')->find($request->request->get('lstProduitAdmin'));
             $categorie->setProduit($produit);
             $em->flush();
@@ -118,7 +131,7 @@ class ProduitController extends Controller
             $em->remove($entity);
             $em->flush();
             
-            return $this->chargerProduit(false, null);
+            return $this->chargerProduitsAdminAction(1);
 	}
         
         public function enregistrerModeleAction(Request $request)
@@ -131,131 +144,8 @@ class ProduitController extends Controller
                 }
             }
 
-            return $this->chargerProduit(false, null);
+            return $this->chargerProduitsAdminAction(2);
         }
 
-        private function creerModele(Request $request){
-            $em = $this->getDoctrine()->getManager();
-            $modele = new \LaMaltiere\SiteWebMaltiereBundle\Entity\Modele();
-            $modele->setId($request->request->get('identifiant'));
-            $modele->setNom_fr($request->request->get('nomfr'));
-            $modele->setNom_en($request->request->get('nomen'));
-            $modele->setDescription_fr($request->request->get('descfr'));
-            $modele->setDescription_en($request->request->get('descen'));
-            $modele->setCapacite_fr($request->request->get('capacitefr'));
-            $modele->setCapacite_en($request->request->get('capaciteen'));
-            $modele->setMoteur_fr($request->request->get('moteurfr'));
-            $modele->setMoteur_en($request->request->get('moteuren'));
-            $modele->setLongueur_bateau_fr($request->request->get('longeurfrbateau'));
-            $modele->setLongueur_bateau_en($request->request->get('longeurenbateau'));
-            $modele->setLongueur_remorque_fr($request->request->get('longeurremorquefr'));
-            $modele->setLongueur_remorque_en($request->request->get('longeurremorqueen'));
-            $modele->setLargeur_bateau_fr($request->request->get('largeurbateaufr'));
-            $modele->setLargeur_bateau_en($request->request->get('largeurbateauen'));
-            $modele->setLargeur_remorque_fr($request->request->get('largeurremorquefr'));
-            $modele->setLargeur_remorque_en($request->request->get('largeurremorqueen'));
-            $modele->setHauteur_modele_fr($request->request->get('hauteurfr'));
-            $modele->setHauteur_modele_en($request->request->get('hauteuren'));
-            $modele->setPoids_modele_fr($request->request->get('poidsfr'));
-            $modele->setPoids_modele_en($request->request->get('poidsen'));
-            $modele->setCharge_fr($request->request->get('chargefr'));
-            $modele->setCharge_en($request->request->get('chargeen'));
-            $modele->setPtc_fr($request->request->get('ptcfr'));
-            $modele->setPtc_en($request->request->get('ptcen'));
-            $modele->setNb_rouleaux_fr($request->request->get('rouleauxfr'));
-            $modele->setNb_rouleaux_en($request->request->get('rouleauxen'));
-            $modele->setRoues_fr($request->request->get('rouesfr'));
-            $modele->setRoues_en($request->request->get('rouesen'));
-            $modele->setPrix_modele($request->request->get('prix'));
-            if($request->request->get('boutique') == null){
-                $modele->setBoutique_modele(false);
-            }else{
-                $modele->setBoutique_modele(true);
-            }
-            if($request->request->get('video') == null){
-                $modele->setVideo_modele(false);
-            }else{
-                $modele->setVideo_modele(true);
-            }
-            if($request->request->get('commande') == null){
-                $modele->setCommande_modele(false);
-            }else{
-                $modele->setCommande_modele(true);
-            }
-            $categorie = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:CategorieModele')->find($request->request->get('lstCategorieAdmin'));
-            $modele->setCategorie($categorie);
 
-            $em->persist($modele);
-            $em->flush();
-        }
-
-        private function modifierModele(Request $request){
-            $em = $this->getDoctrine()->getManager();
-            $modele = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:Modele')->find($request->request->get('identifiant'));
-
-            if (!$modele){
-                throw $this->createNotFoundException(
-                    'Aucun modèle trouvé pour cet id : '.$request->request->get('identifiant')
-                );
-            }
-
-            $modele->setNom_fr($request->request->get('nomfr'));
-            $modele->setNom_en($request->request->get('nomen'));
-            $modele->setDescription_fr($request->request->get('descfr'));
-            $modele->setDescription_en($request->request->get('descen'));
-            $modele->setCapacite_fr($request->request->get('capacitefr'));
-            $modele->setCapacite_en($request->request->get('capaciteen'));
-            $modele->setMoteur_fr($request->request->get('moteurfr'));
-            $modele->setMoteur_en($request->request->get('moteuren'));
-            $modele->setLongueur_bateau_fr($request->request->get('longeurfrbateau'));
-            $modele->setLongueur_bateau_en($request->request->get('longeurenbateau'));
-            $modele->setLongueur_remorque_fr($request->request->get('longeurremorquefr'));
-            $modele->setLongueur_remorque_en($request->request->get('longeurremorqueen'));
-            $modele->setLargeur_bateau_fr($request->request->get('largeurbateaufr'));
-            $modele->setLargeur_bateau_en($request->request->get('largeurbateauen'));
-            $modele->setLargeur_remorque_fr($request->request->get('largeurremorquefr'));
-            $modele->setLargeur_remorque_en($request->request->get('largeurremorqueen'));
-            $modele->setHauteur_modele_fr($request->request->get('hauteurfr'));
-            $modele->setHauteur_modele_en($request->request->get('hauteuren'));
-            $modele->setPoids_modele_fr($request->request->get('poidsfr'));
-            $modele->setPoids_modele_en($request->request->get('poidsen'));
-            $modele->setCharge_fr($request->request->get('chargefr'));
-            $modele->setCharge_en($request->request->get('chargeen'));
-            $modele->setPtc_fr($request->request->get('ptcfr'));
-            $modele->setPtc_en($request->request->get('ptcen'));
-            $modele->setNb_rouleaux_fr($request->request->get('rouleauxfr'));
-            $modele->setNb_rouleaux_en($request->request->get('rouleauxen'));
-            $modele->setRoues_fr($request->request->get('rouesfr'));
-            $modele->setRoues_en($request->request->get('rouesen'));
-            $modele->setPrix_modele($request->request->get('prix'));
-            if($request->request->get('boutique') == null){
-                $modele->setBoutique_modele(false);
-            }else{
-                $modele->setBoutique_modele(true);
-            }
-            if($request->request->get('video') == null){
-                $modele->setVideo_modele(false);
-            }else{
-                $modele->setVideo_modele(true);
-            }
-            if($request->request->get('commande') == null){
-                $modele->setCommande_modele(false);
-            }else{
-                $modele->setCommande_modele(true);
-            }
-            $categorie = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:CategorieModele')->find($request->request->get('lstCategorieAdmin'));
-            $modele->setCategorie($categorie);
-            $em->flush();
-        }
-
-        public function supprimerModeleAction($id)
-        {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:Modele')->find($id);
-
-            $em->remove($entity);
-            $em->flush();
-
-            return $this->chargerProduit(false, null);
-        }
 }

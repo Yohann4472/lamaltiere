@@ -3,6 +3,7 @@
 namespace LaMaltiere\SiteWebMaltiereBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Produit
@@ -24,22 +25,15 @@ class Produit
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_produit_fr", type="string", length=20)
+     * @ORM\Column(name="nom_produit", type="string", length=20)
      */
-    private $nom_fr;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="nom_produit_en", type="string", length=20)
-     */
-    private $nom_en;
+    private $nom;
 	
     /**
     * @ORM\OneToMany(targetEntity="LaMaltiere\SiteWebMaltiereBundle\Entity\CategorieModele", mappedBy="produit")
-    * @ORM\OrderBy({"libelle_fr" = "ASC"})
+    * @ORM\OrderBy({"libelle" = "ASC"})
     */
-    protected $categories;
+    private $categories;
 
     public function __construct(){
             $this->categories = new ArrayCollection();
@@ -56,49 +50,39 @@ class Produit
     }
 
     /**
-     * Set nom_fr
+     * Set id
      *
-     * @param string $nom_fr
-     * @return Produit
+     * @param integer $id
+     * @return integer
      */
-    public function setNom_fr($nom_fr)
+    public function setId($id)
     {
-        $this->nom_fr = $nom_fr;
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return string
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
     
         return $this;
     }
 
     /**
-     * Get nom_fr
+     * Get nom
      *
      * @return string 
      */
-    public function getNom_fr()
+    public function getNom()
     {
-        return $this->nom_fr;
-    }
-
-    /**
-     * Set nom_en
-     *
-     * @param string $nom_en
-     * @return Produit
-     */
-    public function setNom_en($nom_en)
-    {
-        $this->nom_en = $nom_en;
-    
-        return $this;
-    }
-
-    /**
-     * Get nom_en
-     *
-     * @return string 
-     */
-    public function getNom_en()
-    {
-        return $this->nom_en;
+        return $this->nom;
     }
 	
 	public function addCategorie(\LaMaltiere\SiteWebMaltiereBundle\Entity\CategorieModele $categorie)

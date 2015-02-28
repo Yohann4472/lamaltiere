@@ -13,7 +13,9 @@ class MagasinController extends Controller
             ->from('LaMaltiereSiteWebMaltiereBundle:Produit', 'p')
             ->join('p.categories', 'c')
             ->join('c.modeles', 'm')
-            ->where('m.boutique_modele = true');
+            ->where('m.boutique_modele = true')
+            ->andWhere('c.lang = :lang')
+            ->setParameter('lang', $this->get('request')->getLocale());
         $produits = $qb->getQuery()->getSingleResult();
         
         return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:magasin.html.twig', array(
@@ -22,7 +24,12 @@ class MagasinController extends Controller
     }
     
     public function recupererDetailModeleAction($idProduit,$idModele){
-        $detail = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Modele')->find($idModele);
+        $detail = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Modele')->findOneBy(
+            array(
+             'id' => $idModele,
+             'lang' => $this->get('request')->getLocale()
+             )
+        );
         $finder = new Finder();
         $images = $finder->files()->in('bundles/lamaltieresitewebmaltiere/images/produits/'.$idProduit.'/'.$idModele);
         return $this->render('LaMaltiereSiteWebMaltiereBundle:Corps:detailMagasin.html.twig', array(
@@ -40,9 +47,14 @@ class MagasinController extends Controller
     
     public function ajouterProduitPanierMagasinAction(){
         $qtte = $this->get('request')->request->get('quantite');
-        $idPdt = $this->get('request')->request->get('idModele');
+        $idModele = $this->get('request')->request->get('idModele');
         
-        $detail = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Modele')->find($idPdt);
+        $detail = $this->getDoctrine()->getRepository('LaMaltiereSiteWebMaltiereBundle:Modele')->findOneBy(
+             array(
+              'id' => $idModele,
+              'lang' => $this->get('request')->getLocale()
+              )
+         );
    
         $this->ajouterProduit($detail,$qtte);
        
@@ -63,11 +75,7 @@ class MagasinController extends Controller
                 $produit[3] = $produit[3] + $qtte;
                 $panier[$detail->getId()] = $produit;
             }else{
-                if($this->get('session')->get('lang') == null){
-                    $panier[$detail->getId()] = array($detail->getId(), $detail->getCategorie()->getProduit()->getId(), $detail->getNom_fr(), $qtte, $detail->getPrix_modele());
-                }else{
-                    $panier[$detail->getId()] = array($detail->getId(), $detail->getCategorie()->getProduit()->getId(), $detail->getNom_en(), $qtte, $detail->getPrix_modele());
-                }
+                $panier[$detail->getId()] = array($detail->getId(), $detail->getCategorie()->getProduit()->getId(), $detail->getNom(), $qtte, $detail->getPrix_modele());
             }
 
             $this->get('session')->set('panier', $panier);

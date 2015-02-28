@@ -1,1 +1,57 @@
-{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}{% block section %}<section class="conteneur">    <h2>{% if app.session.get('lang') == 'fr' %}{{ detail.nom_fr }}{% else %}{{ detail.nom_en }}{% endif %}<span class="action"><a href="{{ path('lamaltiere_magasin') }}">{% if app.session.get('lang') == 'fr' %}Retour au magasin{% else %}Back to shop{% endif %}</a></span></h2>    <div id='slider' class='swipe' style="max-width:426px;height: 260px;float:left;">          <div class='swipe-wrap'>            {% for image in images %}               <div><img src="{{ asset(image)|replace({'\\': '/' }) }}" width="426px" height="260px" alt="{% if app.session.get('lang') == 'fr' %}{{ detail.nom_fr }}{% else %}{{ detail.nom_en }}{% endif %}" title="{% if app.session.get('lang') == 'fr' %}{{ detail.nom_fr }}{% else %}{{ detail.nom_en }}{% endif %}" /></div>            {% endfor %}        </div>        <span class="nav prev">Prev</span>        <span class="nav next">Next</span>			    </div>        <div class="detailProduit">        <hr />        <center><p class="gras prix">{{ detail.prix_modele }}</p></center>        <hr />        <p>            {% if app.session.get('lang') == 'fr' %}{{ detail.description_fr|nl2br }}{% else %}{{ detail.description_en|nl2br }}{% endif %}        </p>                {% if detail.commande_modele == false %}        <form method="POST" action="{{ path('lamaltiere_ajouterProduitPanier') }}">            <center>                <label for="quantite" style="width:65px">{% if app.session.get('lang') == 'fr' %}Quantité{% else %}Quantity{% endif %} : </label>                <select name="quantite">                    <option value="1" selected>1</option>                     <option value="2">2</option>                    <option value="3">3</option>                    <option value="4">4</option>                    <option value="5">5</option>                  </select>            </center><br />            <input type="hidden" id="idModele" name="idModele" value="{{ detail.id }}" />            <input type="submit" value="{% if app.session.get('lang') == 'fr' %}Ajouter au panier{% else %}Add in the cart{% endif %}" />        </form>        {% else %}            Pour commander ce produit, veuillez nous contacter.        {% endif %}    </div>        <div id="spacer"></div>    <script type="text/javascript">        $(document).ready(function() {            Slider = $('#slider').Swipe({                            auto: 3000,                            continuous: true            }).data('Swipe');            $('.next').on('click', Slider.next);            $('.prev').on('click', Slider.prev);        });    </script></section>{% endblock %}
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+    <h2>{{ detail.nom }}<span class="action"><a href="{{ path('lamaltiere_magasin') }}">{% trans from "magasin" %}magasin.retour.magasin{% endtrans %}</a></span></h2>
+    <div id='slider' class='swipe' style="max-width:426px;height: 260px;float:left;">  
+        <div class='swipe-wrap'>
+            {% for image in images %}
+               <div><img src="{{ asset(image)|replace({'\\': '/' }) }}" width="426px" height="260px" alt="{{ detail.nom }}" title="{{ detail.nom }}" /></div>
+            {% endfor %}
+        </div>
+        <span class="nav prev">{% trans from "barqueRemorque" %}slider.bouton.precedent{% endtrans %}</span>
+        <span class="nav next">{% trans from "barqueRemorque" %}slider.bouton.suivant{% endtrans %}</span>			
+    </div>
+    
+    <div class="detailProduit">
+        <hr />
+        <center><p class="gras prix">{{ detail.prix_modele }}</p></center>
+        <hr />
+        <p>
+            {{ detail.description|nl2br }}
+        </p>
+        
+        {% if detail.commande_modele == false %}
+        <form method="POST" action="{{ path('lamaltiere_ajouterProduitPanier') }}">
+            <center>
+                <label for="quantite" style="width:65px">{% trans from "magasin" %}detailmagasin.message.quantite{% endtrans %} : </label>
+                <select name="quantite">
+                    <option value="1" selected>1</option> 
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+            </center><br />
+            <input type="hidden" id="idModele" name="idModele" value="{{ detail.id }}" />
+            <input type="submit" value="{% trans from "magasin" %}detailmagasin.bouton.ajouterpanier{% endtrans %}" />
+        </form>
+        {% else %}
+            {% trans from "magasin" %}detailmagasin.message.indisponible{% endtrans %}
+        {% endif %}
+    </div>
+        <div id="spacer"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Slider = $('#slider').Swipe({
+                            auto: 3000,
+                            continuous: true
+            }).data('Swipe');
+
+            $('.next').on('click', Slider.next);
+            $('.prev').on('click', Slider.prev);
+        });
+    </script>
+</section>
+{% endblock %}
