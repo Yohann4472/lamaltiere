@@ -1,0 +1,57 @@
+{% extends "::layout.html.twig" %}
+	{% block header %}
+		<div class="contact">
+			<a id="catalogue" href="{{ asset('bundles/lamaltieresitewebmaltiere/pdf/CATALOGUE.pdf') }}" target="_blank"><span class="petit">{% if app.session.get('lang') == 'fr' %}Catalogue{% else %}Catalogue{% endif %}</span></a> 
+			<a href="{{ path('lamaltiere_accueil_lang', { 'lang': 'fr' }) }}" alt="Français"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/langues/France.png') }}" alt="Français" title="Français" /></a>
+			<a href="{{ path('lamaltiere_accueil_lang', { 'lang': 'en' }) }}" alt="English"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/langues/England.png') }}" alt="English" title="English" /></a>
+		</div>
+                
+                <figure class="logo">
+			<a href="{{ path('lamaltiere_accueil') }}"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/logo/logo_lamaltiere.jpg') }}" alt="Logo La Maltiere" /></a>
+		</figure>
+		<nav class="principal">
+			<ul>
+				<li><a href="#">{% if app.session.get('lang') == 'fr' %}Accueil{% else %}Home{% endif %}</a>
+					<ul>
+						<li><a href="{{ path('lamaltiere_presentation') }}">{% if app.session.get('lang') == 'fr' %}L'entreprise{% else %}The company{% endif %}</a></li>
+					</ul>
+				</li>
+				<li><a href="{{ path('lamaltiere_produit', {'idProduit': 1}) }}">{% if app.session.get('lang') == 'fr' %}Barques{% else %}Boats{% endif %}</a></li>
+				<li><a href="{{ path('lamaltiere_produit', {'idProduit': 2}) }}">{% if app.session.get('lang') == 'fr' %}Remorques{% else %}Trailers{% endif %}</a></li>
+				<li><a href="{{ path('lamaltiere_getProduit', {'idProduit': 3, 'idModele': 'BAE' }) }}#7">{% if app.session.get('lang') == 'fr' %}Options{% else %}Options{% endif %}</a></li>
+				
+				<li><a href="#">{% if app.session.get('lang') == 'fr' %}Médias{% else %}Media{% endif %}</a>
+					<ul>
+						<li><a href="{{ path('lamaltiere_photos') }}">{% if app.session.get('lang') == 'fr' %}Photos clients{% else %}Pictures customers{% endif %}</a></li>
+						<li><a href="{{ path('lamaltiere_videoslamaltiere') }}">{% if app.session.get('lang') == 'fr' %}Vidéos La Maltiere{% else %}Videos La Maltiere{% endif %}</a></li>
+						<li><a href="{{ path('lamaltiere_videosclients') }}">{% if app.session.get('lang') == 'fr' %}Vidéos clients{% else %}Customers videos{% endif %}</a></li>
+						<li><a href="{{ path('lamaltiere_presse') }}">{% if app.session.get('lang') == 'fr' %}Presse{% else %}Press{% endif %}</a></li>
+					</ul>
+				</li>
+				<li><a href="{{ path('lamaltiere_liens') }}">{% if app.session.get('lang') == 'fr' %}Liens{% else %}Links{% endif %}</a></li>
+				<li><a href="{{ path('lamaltiere_magasin') }}">{% if app.session.get('lang') == 'fr' %}Magasin{% else %}Shop{% endif %}</a></li>
+				<li><a href="{{ path('lamaltiere_contact') }}">{% if app.session.get('lang') == 'fr' %}Contact{% else %}Contact{% endif %}</a></li>
+			</ul>
+		</nav>
+	{% endblock %}
+
+	{% block section %}
+	{% endblock %}
+	
+	{% block footer %}
+		<p>
+			{% if app.session.get('lang') == 'fr' %}
+				Retrouvez-nous sur : 
+			{% else %}
+				Find us :
+			{% endif %}
+			<a href="https://www.facebook.com/LaMaltiere" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/facebook-ico.png') }}" width="25px" height="25px" alt="Facebook La Maltiere" title="Facebook La Maltiere" /></a>
+			<a href="https://plus.google.com/u/0/102699585695842133884/posts" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/google-plus-ico.png') }}" width="25px" height="25px" alt="Google +" title="Google +" /></a>
+			<a href="http://www.pinterest.com/lamaltiere/" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/pinterest-ico.png') }}" width="25px" height="25px" alt="Pinterest" title="Pinterest" /></a>
+			<a href="http://www.youtube.com/user/TheMaltiere" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/youtube-ico.png') }}" width="25px" height="25px" alt="Youtube" title="Youtube" /></a><br /><br />
+			{{ entreprise }} - {{ adresse }} - {{ ville }} - {{ telephone }} - {{ mail }}
+		</p>
+		<p>
+			<small>{{ copyright }}</small>
+		</p>
+	{% endblock %}

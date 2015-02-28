@@ -1,0 +1,161 @@
+lamaltiere_accueil:
+    path:     /
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Index:charger }
+
+lamaltiere_accueil1:
+    path:     /index
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Index:charger }
+
+lamaltiere_accueil_lang:
+    path:     /index/{lang}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Index:modifierLang }
+    requirements:
+        lang:  fr|en
+
+lamaltiere_presentation:
+    path:     /presentation
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Index:presentation }
+
+lamaltiere_referencePro:
+    path:     /referencesprofessionnelles
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:References:chargerReferences }
+
+lamaltiere_produit:
+    path:     /{idProduit}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:chargerProduit }
+    requirements:
+        idProduit: 1|2|3
+
+lamaltiere_getProduit:
+    path:     /{idProduit}/{idModele}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:recupererUnModele }
+    requirements:
+        idProduit: 1|2|3
+
+lamaltiere_photos:
+    path:     /photos
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Photos:chargerPhotos }
+
+lamaltiere_videoslamaltiere:
+    path:     /videoslamaltiere
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Videos:chargerVideos, id: 1 }
+
+lamaltiere_videosclients:
+    path:     /videosclients
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Videos:chargerVideos, id: 2 }
+
+lamaltiere_presse:
+    path:     /presse
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Presse:charger }
+
+lamaltiere_liens:
+    path:     /liens
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Lien:charger }
+
+lamaltiere_magasin:
+    path:     /shop
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Magasin:chargerProduitMagasin }
+
+lamaltiere_panier:
+    path:     /panier
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Magasin:chargerPanierMagasin }
+ 
+lamaltiere_ajouterProduitPanier:
+    path:     /ajoutpanier
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Magasin:ajouterProduitPanierMagasin }
+    
+lamaltiere_supprimerProduitPanier:
+    path:     /supressionpanier/{idProduit}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Magasin:supprimerProduitPanierMagasin }
+
+lamaltiere_commande:
+    path:     /commande
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Magasin:confirmerPanierMagasin }
+    
+lamaltiere_confirmation:
+    path:     /confirmation
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Magasin:confirmationCommande }
+      
+lamaltiere_detailMagasin:
+    path:     /shop/{idProduit}/{idModele}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Magasin:recupererDetailModele }
+
+lamaltiere_contact:
+    path:     /contact
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Index:contact }
+
+lamaltiere_administration:
+    path:     /administration
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:chargerProduitsAdmin }
+
+lamaltiere_administration_produits:
+    path:     /administration/produits
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:chargerProduitsAdmin }
+
+lamaltiere_administration_categorie_enregistrer:
+    path:     /administration/produits/categorie/enregistrer
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:enregistrerCategorie }
+
+lamaltiere_administration_categorie_supprimer:
+    path:     /administration/produits/categorie/supprimer/{id}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:supprimerCategorie }
+    requirements:
+        id:   \d+
+
+lamaltiere_administration_modele_enregistrer:
+    path:     /administration/produits/modele/enregistrer
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:enregistrerModele }
+
+lamaltiere_administration_modele_supprimer:
+    path:     /administration/produits/modele/supprimer/{id}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Produit:supprimerModele }
+
+lamaltiere_administration_liens:
+    path:     /administration/liens
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Lien:chargerLiensAdmin }
+
+lamaltiere_administration_type_site_enregistrer:
+    path:     /administration/liens/type/enregistrer
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Lien:enregistrerType }
+
+lamaltiere_administration_type_site_supprimer:
+    path:     /administration/liens/type/supprimer/{id}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Lien:supprimerType }
+    requirements:
+        id:   \d+
+
+lamaltiere_administration_site_enregistrer:
+    path:     /administration/liens/site/enregistrer
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Lien:enregistrerSite }
+
+lamaltiere_administration_site_supprimer:
+    path:     /administration/liens/site/supprimer/{id}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Lien:supprimerSite }
+    requirements:
+        id:   \d+
+
+lamaltiere_administration_press:
+    path:     /administration/presse
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Presse:chargerArticlesAdmin }
+
+lamaltiere_administration_videos:
+    path:     /administration/videos
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Videos:chargerVideosAdmin }
+
+lamaltiere_administration_videos_enregistrer:
+    path:     /administration/videos/enregistrer
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Videos:enregistrerVideo }
+
+lamaltiere_administration_videos_supprimer:
+    path:     /administration/videos/supprimer/{url}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Videos:supprimerVideo }
+
+lamaltiere_administration_article_enregistrer:
+    path:     /administration/presse/article/enregistrer
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Presse:enregistrerArticle }
+
+lamaltiere_administration_article_supprimer:
+    path:     /administration/presse/article/supprimer/{id}
+    defaults: { _controller: LaMaltiereSiteWebMaltiereBundle:Presse:supprimerArticle }
+    requirements:
+        id:   \d+

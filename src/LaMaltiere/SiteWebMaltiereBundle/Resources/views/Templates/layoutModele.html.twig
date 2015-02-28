@@ -1,0 +1,47 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	{% set lang = app.session.get('lang') %}
+	<nav class="secondaire">
+		<ul class="gauche">
+			{% if produits.id < 3 %}
+                        <li id="0">
+                            <a href="{{ path('lamaltiere_produit', {'idProduit': produits.id}) }}#0">{% if lang == 'fr' %}Caractéristiques techniques{% else %}Design Features{% endif %}</a>
+                        </li>
+			{% endif %}
+			{% for categorie in produits.categories %}
+                                {% if produits.categories|length > 0 %}
+                                    <li id="{{ categorie.id }}">
+                                        <a href="#{{ categorie.id }}">{% if lang == 'fr' %}{{ categorie.libelle_fr }}{% else %}{{ categorie.libelle_en }}{% endif %}</a>
+                                            {% if categorie.modeles|length > 0 %}
+                                                    <ul class="sub-menu">
+                                                    {% for modele in categorie.modeles %}
+                                                        {% if modele.boutique_modele ==  false %}
+                                                            <li><a href="{{ path('lamaltiere_getProduit', {'idProduit': produits.id, 'idModele': modele.id }) }}#{{ categorie.id }}">{% if lang == 'fr' %}{{ modele.nom_fr }}{% else %}{{ modele.nom_en }}{% endif %}</a></li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    </ul>
+                                            {% endif %}
+                                    </li>
+                                {% endif %}
+			{% endfor %}
+		</ul>
+	</nav>
+	{% block modele %}
+	{% endblock %}
+	<div id="spacer"></div>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                Slider = $('#slider').Swipe({
+                                auto: 3000,
+                                continuous: true
+                }).data('Swipe');
+
+                $('.next').on('click', Slider.next);
+                $('.prev').on('click', Slider.prev);
+            });
+        </script>
+</section>
+{% endblock %}

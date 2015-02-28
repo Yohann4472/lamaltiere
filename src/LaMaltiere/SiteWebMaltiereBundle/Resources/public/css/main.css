@@ -1,0 +1,216 @@
+html {
+	overflow-y 				: 		scroll;
+}
+
+body {
+	margin					:		0;
+	padding					:		0;
+	background				: 		black;
+	width					:		100%;
+	height					:		100%;
+	font					:		13px Arial, Helvetica, sans-serif;
+	color					:		white;
+}
+
+header{
+	width					: 		1000px;
+	height					:		70px;
+	margin					: 		10px auto;
+}
+
+.contact{
+	width					:		400px;
+	height					:		25px;
+	text-decoration                         :		none;
+	text-align				:		right;
+	float					:		right;
+}
+
+.contact img {
+	vertical-align                           :		middle;
+	width					:		20px;
+	height					:		20px;
+}
+
+header .logo {
+	position				:		relative;
+	width					:		170px;
+	height					:		50px;
+	float					:		left;
+	text-align				:		center;
+	margin-top				:		10px;
+}
+
+.logo img{
+	width					:		190px;
+	height					:		70px;
+}
+
+section{
+	height					:		auto;
+	width					:		1000px;
+	padding					:		1px 0px 1px 2px;
+	margin					:		0px auto 0px auto;
+}
+
+.conteneur {
+	height					:		auto;
+	width					:		1000px;
+	margin-top				:		25px;
+	padding					:		2px 10px 10px 10px;
+	background-color                        :		gray;
+	border-radius                           :		10px;
+}
+
+.presentation{
+	width					:		auto;
+	margin					:		20px auto;
+}
+
+.presentation ul{
+	width					:		795px;
+	height					:		135px;
+	margin					:		auto;
+}
+
+.presentation li{
+	display					:		inline-block;
+}
+
+.presentation p {
+	width					:		620px;
+	height					:		auto;
+}
+
+.presentation p:first-letter {
+	font-size				:		19pt;
+}
+
+.video,
+iframe
+{
+	margin					:		-10px 20px 0px 0px;
+	float					:		right;
+}
+
+.imgBas {
+	width					:		189px;
+	height					:		111px;
+	margin-top				:		10px;
+}
+
+figure {
+	margin					:		0px 0px 6px 0px;
+	display					: 		inline-block;
+}
+
+figcaption{
+	text-align				:		center;
+}
+
+.article{
+	vertical-align                          :               top;
+	box-shadow                              :               -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
+}
+
+.article:hover{
+	vertical-align                          :               top;
+	box-shadow                              :               -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+}
+
+
+.modele{
+	float					:		right;
+	width					:		730px;
+	height					:		auto;
+	margin-right                            :		10px;
+}
+
+#spacer{
+	clear					:		both;
+}
+
+footer{
+	width					:		1000px;
+	margin					:		0px auto;
+	height					:		114px;
+	padding					:		1px 0px 0px 0px;
+	color					:		rgb(252,102,0);
+	text-align				:		center;
+}
+
+article{
+	position				:               relative;
+	width					:               215px;
+	height					:               200px;
+	float					:               left;
+	padding					:               10px 5px 20px 5px;
+        border-radius                           :               5px;
+        margin                                  :               0px 0px 15px 20px;
+        border                                  :               1px solid white;
+        background-color                        :               #eae9e9;
+}
+
+article:hover{
+        background-color                        :               #797979;
+}
+
+table {
+        background                              :               #eae9e9;
+        color                                   :               #797979;
+        border-width                            :               1px;
+        border-style                            :               solid;
+        border-color                            :               black;
+}
+
+td {
+        text-align                              :               center;
+}
+
+thead td:first-child {
+        width                                   :               100px;
+}
+
+thead td:nth-child(n+2) {
+        width                                   :               80px;
+}
+
+tbody {
+        color                                   :               black;
+}
+
+.nom{
+    height                                      :               20px;
+    font-size                                   :               9pt;
+}
+
+.detailProduit{
+    background                                  :               #eae9e9;
+    color                                       :               black;
+    border-width                                :               1px;
+    border-style                                :               solid;
+    border-color                                :               black;
+    height                                      :               249px;
+    width                                       :               560px;
+    float                                       :               right;
+    padding                                     :               5px 0px 5px 5px;
+    margin-top                                  :               10px; 
+}
+
+.panier td:first-child {
+    width                                       :               150px;
+}
+
+.panier td:nth-child(2) {
+    width                                       :               200px;
+}
+
+.panier td:nth-child(n+3) {
+    width                                       :               65px;
+}
+
+.survol{
+    border-width                                :               2px;
+    border-style                                :               solid;
+    border-color                                :               white;
+}
