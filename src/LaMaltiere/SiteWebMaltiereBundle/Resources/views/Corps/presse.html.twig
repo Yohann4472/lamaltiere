@@ -1,0 +1,18 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	<h2>{% trans from "medias" %}medias.presse.titre{% endtrans %}</h2>
+	{% for article in articles %}
+                <a href="{{ asset('bundles/lamaltieresitewebmaltiere/presse/' ~ article.chemin ~ '') }}" target=_blank">
+                <figure class="article">
+                    <img src="{{ asset('bundles/lamaltieresitewebmaltiere/presse/images/' ~ article.chemin|split('.')[0] ~ '.jpg') }}" height="160px" width="196px" alt="{{ article.publicateur }}" title="{{ article.publicateur }}" />
+                    <figcaption>
+                    {{ article.publicateur }}<br />
+                    {{ article.date }}<br />
+                    {{ article.commentaire }}</figcaption>
+                </figure>
+		</a>
+	{% endfor %}
+</section>
+{% endblock %}

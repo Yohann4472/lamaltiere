@@ -1,0 +1,50 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle:Templates:layoutModele.html.twig" %}
+
+{% block modele %}
+	<div class="modele">
+            {% if produit.id == 2 %}
+                <h2>{% trans from "barqueRemorque" %}remorque.pam.titre{% endtrans %}</h2>
+                {% trans from "barqueRemorque" %}remorque.pam.contenu{% endtrans %}
+                <span id="survolRoues" class="gras orange">{% trans from "barqueRemorque" %}remorque.pam.contenu.rouesecours{% endtrans %}</span> - <span id="survolSupport" class="gras orange">{% trans from "barqueRemorque" %}remorque.pam.contenu.supportroue{% endtrans %}</span> {% trans from "barqueRemorque" %}remorque.pam.contenu.autres{% endtrans %}
+        
+                <a href="http://www.remorques-pam.com/" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/logo/logopnr.gif') }}" width="60px" height="47px" title="Pam Rocca Nautilus A.I.N" alt="Pam Rocca Nautilus A.I.N" /></a><br /><br />
+            {% endif %}
+            
+            <center>
+                <img id="roueDeSecours" class="survol" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/produits/pam/roueDeSecours.jpg') }}" />
+                <img id="supportRouesDeSecours" class="survol" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/produits/pam/supportRouesDeSecours.jpg') }}" />
+            </center>
+            
+            <h2>
+                {% if produit.id == 1 %}
+                    {% trans from "barqueRemorque" %}barque.caracteristique.principal.titre{% endtrans %}
+                {% else %} 
+                   {% trans from "barqueRemorque" %}remorque.caracteristique.titre{% endtrans %}
+                {% endif %}
+            </h2>
+                {% if produit.id == 1 %}
+                    <img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/produits/descriptions/descriptionBarque_' ~ app.request.getLocale() ~ '.jpg') }}" width="730px" height="600px" title="{% trans from "barqueRemorque" %}barque.caracteristique.principal.titre{% endtrans %}" alt="{% trans %}barque.caracteristique.principal.titre{% endtrans %}" />
+        
+                    <h2>{% trans from "barqueRemorque" %}barque.caracteristique.technique.titre{% endtrans %}</h2>
+                    {% trans from "barqueRemorque" %}barque.caracteristique.technique.contenu{% endtrans %}
+
+                    <h2>{% trans from "barqueRemorque" %}barque.caracteristique.stabilite.titre{% endtrans %}</h2>
+                        <div id='slider' class='swipe' style="max-width:300px; height: 175px;">  
+                            <div class='swipe-wrap'>
+                                    {% for image in images %}
+                                        <div><img src="{{ asset(image)|replace({'\\': '/' }) }}" width="300" height="175" alt="" /></div>
+                                    {% endfor %}
+                            </div>
+                            <span class="nav prev">{% trans from "barqueRemorque" %}slider.bouton.precedent{% endtrans %}</span>
+                            <span class="nav next">{% trans from "barqueRemorque" %}slider.bouton.suivant{% endtrans %}</span>			
+                        </div>
+                    <h2>{% trans from "barqueRemorque" %}barque.caracteristique.equipement.titre{% endtrans %}</h2>
+                    {% trans from "barqueRemorque" %}barque.caracteristique.equipement.contenu{% endtrans %}
+
+                    <h2>{% trans from "barqueRemorque" %}barque.caracteristique.remarques.titre{% endtrans %}</h2>
+                    {% trans from "barqueRemorque" %}barque.caracteristique.remarques.contenu{% endtrans %}
+                {% else %}
+                    <img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/produits/descriptions/descriptionRemorque_' ~ app.request.getLocale() ~ '.jpg') }}" width="730px" height="600px" title="{% trans from "barqueRemorque" %}remorque.caracteristique.titre{% endtrans %}" alt="{% trans from "barqueRemorque" %}remorque.caracteristique.titre{% endtrans %}" />
+                {% endif %}
+	</div>
+{% endblock %}

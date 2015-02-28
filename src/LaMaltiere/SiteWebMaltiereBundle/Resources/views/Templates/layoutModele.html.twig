@@ -1,0 +1,46 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	<nav class="secondaire">
+		<ul class="gauche">
+			{% if produit.id < 3 %}
+                        <li id="0">
+                            <a href="{{ path('lamaltiere_produit', {'idProduit': produit.id}) }}#0">{% trans from "barqueRemorque" %}barque.caracteristique.technique.titre{% endtrans %}</a>
+                        </li>
+			{% endif %}
+			{% for categorie in produit.categories %}
+                {% if produit.categories|length > 0 %}
+                    <li id="{{ categorie.id }}">
+                        <a href="#{{ categorie.id }}">{{ categorie.libelle }}</a>
+                            {% if categorie.modeles|length > 0 %}
+                                    <ul class="sub-menu">
+                                    {% for modele in categorie.modeles %}
+                                        {% if modele.boutique_modele ==  false %}
+                                            <li><a href="{{ path('lamaltiere_getProduit', {'idProduit': produit.id, 'idModele': modele.id }) }}#{{ categorie.id }}">{{ modele.nom }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                            {% endif %}
+                    </li>
+                {% endif %}
+			{% endfor %}
+		</ul>
+	</nav>
+	{% block modele %}
+	{% endblock %}
+	<div id="spacer"></div>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                Slider = $('#slider').Swipe({
+                                auto: 3000,
+                                continuous: true
+                }).data('Swipe');
+
+                $('.next').on('click', Slider.next);
+                $('.prev').on('click', Slider.prev);
+            });
+        </script>
+</section>
+{% endblock %}

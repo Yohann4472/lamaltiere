@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="1">
+                <source>contact.titre</source>
+                <target>Nous contacter</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>contact.telecharger.catalogue</source>
+                <target>Télécharger notre catalogue et bon de commande</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>contact.catalogue.titre</source>
+                <target>Catalogue</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>contact.boncommande.titre</source>
+                <target>Bon de commande</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>contact.boncommande.phrase1</source>
+                <target>Remplir le bon de commande et renvoyez le à SAS LA MALTIERE.</target>
+            </trans-unit>
+			<trans-unit id="6">
+                <source>contact.boncommande.phrase2</source>
+                <target>Pour toute information tarifaire et/ou complémentaire sur nos produits, n'hésitez pas à nous contacter.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

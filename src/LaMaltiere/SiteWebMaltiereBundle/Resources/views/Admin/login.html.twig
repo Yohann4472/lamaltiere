@@ -1,0 +1,38 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	<h2>Connexion à l'espace d'administration</h2>
+	<div class="presentation">
+        {% if error %}
+            <div class="gras prix">{{ error.message }}</div>
+        {% endif %}
+        
+        
+        <center>
+            <form action="{{ path('lamaltiere_login_check') }}" method="post">
+                <table class="panier">
+                    <tbody>
+                        <tr>
+                            <td><label for="username">Login :</label></td>
+                            <td><input type="text" id="username" name="_username" value="{{ last_username }}" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Mot de passe :</label></td>
+                            <td> <input type="password" id="password" name="_password" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="hidden" name="_target_path" value="/fr/administration/categories" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit">Connexion</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </center>
+    </div>
+</section>
+{% endblock %}

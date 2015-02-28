@@ -1,0 +1,39 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+	<h2>{% trans from "contact" %}contact.titre{% endtrans %}</h2>
+	<div class="presentation">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.083793550389!2d-0.9133105000000183!3d48.416535599999946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7d3fdfca388b58fd!2sSAS+La+Malti%C3%A8re%2FBarque+aluminium%2FAlu+Speed+Boat%2FAluminium+boat!5e0!3m2!1sfr!2sfr!4v1397942476278" frameborder="0" style="border:0"></iframe>
+		<p>{{ entreprise }}<br />
+		{{ adresse }}<br />
+                {{ ville }} <span class="orange">{{ pays }}</span><br />
+		{{ telephone }}<br />
+		<a href="mailto:{{ mail }}">@ : {{ mail }}</a><br />
+		{{ skype }}<br /><br />
+		{{ siret }}<br />
+		{{ ape }}</p>
+	</div>
+	<h2>{% trans from "contact" %}contact.telecharger.catalogue{% endtrans %}</h2>
+	<center>
+			<figure>
+				<a href="{{ asset('bundles/lamaltieresitewebmaltiere/pdf/CATALOGUE_' ~ app.request.getLocale() ~ '.pdf') }}" target="_blank">
+					<img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/icones/catalogue.png') }}" width=80 height=105 border=0 alt="{% trans from "contact" %}contact.catalogue.titre{% endtrans %}" title="{% trans from "contact" %}contact.catalogue.titre{% endtrans %}">
+				</a>
+			  <figcaption>{% trans from "contact" %}contact.catalogue.titre{% endtrans %}</figcaption>
+			</figure>
+			<figure>
+				<a href="{{ asset('bundles/lamaltieresitewebmaltiere/pdf/bondecommande_' ~ app.request.getLocale() ~ '.pdf') }}" target="_blank">
+					<img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/icones/commande.png') }}" width=80 height=105 border=0 alt="{% trans from "contact" %}contact.boncommande.titre{% endtrans %}" title="{% trans from "contact" %}contact.boncommande.titre{% endtrans %}">
+				</a>
+			  <figcaption>{% trans from "contact" %}contact.boncommande.titre{% endtrans %}</figcaption>
+			</figure>
+	</center>
+	<div class="presentation">
+		<p>
+            {% trans from "contact" %}contact.boncommande.phrase1{% endtrans %}<br />
+            {% trans from "contact" %}contact.boncommande.phrase2{% endtrans %}
+        </p>
+	</div>
+</section>
+{% endblock %}

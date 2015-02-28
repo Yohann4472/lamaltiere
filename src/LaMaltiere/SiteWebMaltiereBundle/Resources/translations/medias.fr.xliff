@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="1">
+                <source>medias.photosclients.titre</source>
+                <target>Espace photos clients</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>medias.4000G.titre</source>
+                <target>Photos 4000G en action</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>medias.videolamaltiere.titre</source>
+                <target>Vidéos La Maltière</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>medias.videoclients.titre</source>
+                <target>Vidéos clients</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>medias.presse.titre</source>
+                <target>Presse</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>liens.titre.siteclients</source>
+                <target>Sites de clients</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>liens.titre.siteprofessionnels</source>
+                <target>Sites de professionnels</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>liens.titre.referenceprofessionnelle</source>
+                <target>Références professionnelles</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

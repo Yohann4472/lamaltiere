@@ -1,0 +1,83 @@
+a {
+	text-decoration                         :		none;
+	color					:		white;
+}
+
+a:hover{
+	color					:		rgb(252,102,0);
+}
+
+.petit {
+	font-size				:		9pt;
+}
+
+.gras {
+	font-weight				:		bold;
+	font-size				:		11pt;
+}
+
+@font-face {
+	font-family				:		'Brushsci';
+	src					:		url('../../../../Resources/public/Brush_Script_MT_Italic.ttf');
+}
+
+h1{
+	font-size				:		22px;
+	color					:		rgb(252,102,0);
+}
+
+h2{
+	margin-top				:		8px;
+	font-weight				:		bold;
+	background-color                        :		black;
+	color					:		rgb(252,102,0);
+	height					:		34px;
+	padding					:		10px 0px 0px 10px;
+        border-radius                           :               10px;
+}
+
+.contour {
+	border					:		1px solid rgb(252,102,0);
+}
+
+h3{
+    color                                       :               black;
+}
+
+h4{
+    background-color                            :               #eae9e9;
+    padding                                     :               15px;
+    color                                       :               black;
+    height                                      :               auto;
+}
+
+.action{
+    float                                       :               right;
+    margin-right                                :               30px;
+}
+
+.action a{
+    color                                       :               #08C;
+}
+
+.action a:hover{
+    color                                       :               orange;
+}
+
+.prix{
+    color                                       :               red;
+    text-align                                  :               center;
+    font-size                                   :		16pt;
+}
+
+hr {
+    width                                       :               80%;
+}
+
+.total{
+    font-weight                                 :		bold;
+}
+
+.orange{
+    color                                       :               orange;
+}

@@ -1,0 +1,34 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle:Templates:layoutModele.html.twig" %}
+
+{% block modele %}
+	<div class="modele">
+            <h2>{{ modele.nom }}</h2>
+            <p>
+                    {{ modele.description|nl2br }}
+            </p>
+            
+            <p>
+                {% if modele.video_modele %}
+                    <center><a href="{{ path('lamaltiere_videoslamaltiere') }}">Voir la vidéo ici</a></center>
+                {% endif %}
+            </p>
+            
+            {% if modele.categorie.produit.id == 1 %}
+                    {{ include('LaMaltiereSiteWebMaltiereBundle:Templates:barque.html.twig', {'modele': modele}) }}
+            {% elseif modele.categorie.produit.id == 2 %}
+                    {{ include('LaMaltiereSiteWebMaltiereBundle:Templates:remorque.html.twig', {'modele': modele}) }}
+            {% endif %}
+            
+            {% if images|length > 0 %}
+                <div id='slider' class='swipe' style="max-width:600px; height: 350px;">  
+                    <div class='swipe-wrap'>
+                            {% for image in images %}
+                                <div><img src="{{ asset(image)|replace({'\\': '/' }) }}" width="600" height="350" alt="{{ modele.nom }}" title="{{ modele.nom }}" /></div>
+                            {% endfor %}
+                    </div>
+                    <span class="nav prev">{% trans from "barqueRemorque" %}slider.bouton.precedent{% endtrans %}</span>
+                    <span class="nav next">{% trans from "barqueRemorque" %}slider.bouton.suivant{% endtrans %}</span>			
+                </div>
+            {% endif %}
+	</div>
+{% endblock %}

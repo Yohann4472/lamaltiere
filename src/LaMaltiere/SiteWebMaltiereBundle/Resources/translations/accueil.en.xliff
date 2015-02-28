@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="0">
+                <source>accueil.catalogue.chemin</source>
+                <target>CATALOGUE</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>accueil.catalogue.titre</source>
+                <target>Catalogue</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>accueil.retrouveznous</source>
+                <target>Find us</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>accueil.lien.facebook</source>
+                <target>https://www.facebook.com/LaMaltiere</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>accueil.lien.googeplus</source>
+                <target>https://plus.google.com/u/0/102699585695842133884/posts</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>accueil.lien.pinterest</source>
+                <target>http://www.pinterest.com/lamaltiere/</target>
+            </trans-unit>
+			<trans-unit id="6">
+                <source>accueil.lien.instagram</source>
+                <target>http://instagram.com/la_maltiere/</target>
+            </trans-unit>
+			<trans-unit id="7">
+                <source>accueil.lien.youtube</source>
+                <target>http://www.youtube.com/user/TheMaltiere</target>
+            </trans-unit>
+			<trans-unit id="8">
+                <source>accueil.lien.flickr</source>
+                <target>https://www.flickr.com/photos/lamaltiere/</target>
+            </trans-unit>
+			<trans-unit id="9">
+                <source>accueil.entreprise.titre</source>
+                <target>Presentation of the company</target>
+            </trans-unit>
+			<trans-unit id="10">
+                <source>accueil.entreprise.lienvideoyoutube</source>
+                <target>//www.youtube.com/embed/Ut3dfdRX-xI</target>
+            </trans-unit>
+			<trans-unit id="11">
+                <source>accueil.entreprise.texte.denomination</source>
+                <target>LA MALTIERE</target>
+            </trans-unit>
+			<trans-unit id="12">
+                <source>accueil.entreprise.texte.phrase1</source>
+                <target>is a specialized small factory using experienced craftsmen manufacturing all-welded fishing boats.</target>
+            </trans-unit>
+			<trans-unit id="13">
+                <source>accueil.entreprise.texte.phrase2</source>
+                <target>Our boats can be customized according to the customers requirements.</target>
+            </trans-unit>
+			<trans-unit id="14">
+                <source>accueil.entreprise.texte.phrase3</source>
+                <target>Our boats are sold in France, Belgium, Switzerland (Swiss), Cameroon, New Caledonia, Vietnam, Niger, Maroc, Congo, Saint Barth (Antilles). They are approved to E.U. standards and can be registrered in category D.</target>
+            </trans-unit>
+			<trans-unit id="15">
+                <source>accueil.entreprise.texte.longeur</source>
+                <target>Length : From 2.70 m to 5.00 m</target>
+            </trans-unit>
+			<trans-unit id="16">
+                <source>accueil.entreprise.texte.poids</source>
+                <target>Weight : From 31 Kg to 85 Kg</target>
+            </trans-unit>
+			<trans-unit id="17">
+                <source>accueil.entreprise.texte.prix</source>
+                <target>From</target>
+            </trans-unit>
+			<trans-unit id="18">
+                <source>accueil.entreprise.image.fabrication</source>
+                <target>French craft manufacturing</target>
+            </trans-unit>
+			<trans-unit id="19">
+                <source>accueil.entreprise.image.transport</source>
+                <target>Easy to transport - Light</target>
+            </trans-unit>
+			<trans-unit id="20">
+                <source>accueil.entreprise.image.modifiable</source>
+                <target>Fully customizable</target>
+            </trans-unit>
+			<trans-unit id="21">
+                <source>accueil.entreprise.image.stabilite</source>
+                <target>Unrivaled stability</target>
+            </trans-unit>
+			<trans-unit id="22">
+                <source>accueil.travauxsoudure.titre</source>
+                <target>Welding realisations</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

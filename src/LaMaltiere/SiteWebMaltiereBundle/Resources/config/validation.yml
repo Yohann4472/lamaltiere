@@ -1,0 +1,6 @@
+LaMaltiere\SiteWebMaltiereBundle\Entity\TypeSiteForm:
+    properties:
+        libelleFR:
+            - NotBlank: ~
+        libelleEN:
+            - NotBlank: ~

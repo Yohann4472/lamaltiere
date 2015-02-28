@@ -1,0 +1,22 @@
+{% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
+
+{% block section %}
+<section class="conteneur">
+        
+    <h2>{% trans from "magasin" %}magasin.moteur.titre{% endtrans %}<span class="action"><a href="{{ path('lamaltiere_panier') }}">{% trans from "magasin" %}magasin.panier.titre{% endtrans %}</a></span></h2>
+        {% for produit in produits.categories %}
+            <h2>{{ produit.libelle }}</h2>
+                {% for modele in produit.modeles %}
+                        <article>
+                            <a href="{{ path('lamaltiere_detailMagasin', {'idProduit': produits.id, 'idModele': modele.id }) }}">
+                                <img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/produits/' ~ produits.id ~'/' ~ modele.id ~ '/1.jpg') }}" width="213px" height="130px" title="{{ modele.nom }}" alt="{{ modele.nom }}" /><br />
+                                <h3 class="nom">{{ modele.nom|upper }}</h3>
+                                <div><h3 class="gras prix">{{ modele.prix_modele }}</h3></div>
+                            </a>
+                        </article>
+                {% endfor %}
+              <div id="spacer"></div>
+        {% endfor %}
+	<div id="spacer"></div>
+</section>
+{% endblock %}

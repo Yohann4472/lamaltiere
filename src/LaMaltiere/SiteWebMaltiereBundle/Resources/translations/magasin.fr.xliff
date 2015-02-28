@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="1">
+                <source>magasin.moteur.titre</source>
+                <target>Revente de moteurs et d'écho sondeurs, nous consulter</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>magasin.panier.titre</source>
+                <target>Mon panier</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>magasin.panier.vide</source>
+                <target>Votre panier est vide.</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>magasin.panier.commandevalidee</source>
+                <target>Votre commande a bien été envoyé à la société La Maltière.</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>magasin.panier.emailenvoye</source>
+                <target>Un email récapitulatif de votre commande a été envoyé sur l'adresse mail :</target>
+            </trans-unit>
+			<trans-unit id="6">
+                <source>magasin.panier.recapitulatif</source>
+                <target>Récapitulatif des articles</target>
+            </trans-unit>
+			<trans-unit id="7">
+                <source>magasin.panier.produit</source>
+                <target>Produit</target>
+            </trans-unit>
+			<trans-unit id="8">
+                <source>magasin.panier.quantite</source>
+                <target>Quantité</target>
+            </trans-unit>
+			<trans-unit id="9">
+                <source>magasin.panier.prixunitaire</source>
+                <target>P.U</target>
+            </trans-unit>
+			<trans-unit id="10">
+                <source>magasin.panier.total</source>
+                <target>Total</target>
+            </trans-unit>
+			<trans-unit id="11">
+                <source>magasin.panier.msgtotal</source>
+                <target>Total de votre commande</target>
+            </trans-unit>
+			<trans-unit id="12">
+                <source>magasin.panier.fraisport</source>
+                <target>Frais de port inclus</target>
+            </trans-unit>
+			<trans-unit id="13">
+                <source>magasin.retour.magasin</source>
+                <target>Retour au magasin</target>
+            </trans-unit>
+			<trans-unit id="14">
+                <source>magasin.bouton.commander</source>
+                <target>Commander</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>detailmagasin.bouton.ajouterpanier</source>
+                <target>Ajouter au panier</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>detailmagasin.message.indisponible</source>
+                <target>Pour commander ce produit, veuillez nous contacter.</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>detailmagasin.message.quantite</source>
+                <target>Quantité</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>confirmation.commande.titre</source>
+                <target>Finalisation de ma commande</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>confirmation.commande.civilite</source>
+                <target>Civilité</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>confirmation.commande.civilite.monsieur</source>
+                <target>Monsieur</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>confirmation.commande.civilite.madame</source>
+                <target>Madame</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>confirmation.commande.nom</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>confirmation.commande.prenom</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>confirmation.commande.adresse</source>
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>confirmation.commande.codepostal</source>
+                <target>Code postal</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>confirmation.commande.ville</source>
+                <target>Ville</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>confirmation.commande.pays</source>
+                <target>Pays</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>confirmation.commande.telephone</source>
+                <target>Téléphone</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>confirmation.commande.email</source>
+                <target>Adresse email</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>confirmation.commande.bouton.valider</source>
+                <target>Valider la commande</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

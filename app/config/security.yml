@@ -1,0 +1,24 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    lamaltiere: { password: toto, roles: 'ROLE_ADMIN' }
+
+    firewalls:
+
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
+            form_login:
+               login_path: /fr/login
+               check_path: /fr/login_check
+            logout:
+                path: /fr/logout
+                target: /
+
+    access_control:
+        - { path: ^/administration, roles: ROLE_ADMIN }

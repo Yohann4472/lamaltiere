@@ -1,0 +1,3 @@
+SiteWebMaltiereBundle:
+    resource: "@LaMaltiereSiteWebMaltiereBundle/Resources/config/routing.yml"
+    prefix:   /

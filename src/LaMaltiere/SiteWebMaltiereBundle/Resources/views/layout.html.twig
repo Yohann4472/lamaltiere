@@ -1,0 +1,57 @@
+{% extends "::layout.html.twig" %}
+	{% block header %}
+		<div class="contact">
+			<a id="catalogue" href="{{ asset('bundles/lamaltieresitewebmaltiere/pdf/CATALOGUE_' ~ app.request.getLocale() ~ '.pdf') }}" target="_blank"><span class="petit">{% trans from "accueil" %}accueil.catalogue.titre{% endtrans %}</span></a> 
+			<a href="{{ path('lamaltiere_accueil_lang', { '_locale': 'fr' }) }}" alt="Français"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/langues/France.png') }}" alt="Français" title="Français" /></a>
+			<a href="{{ path('lamaltiere_accueil_lang', { '_locale': 'en' }) }}" alt="English"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/langues/England.png') }}" alt="English" title="English" /></a>
+		</div>
+                
+                <figure class="logo">
+			<a href="{{ path('lamaltiere_accueil_lang') }}"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/logo/logo_lamaltiere.jpg') }}" alt="Logo La Maltiere" /></a>
+		</figure>
+		<nav class="principal">
+			<ul>
+				<li><a href="#">{% trans from "menu" %}menu.accueil{% endtrans %}</a>
+					<ul>
+						<li><a href="{{ path('lamaltiere_presentation') }}">{% trans from "menu" %}menu.accueil.entreprise{% endtrans %}</a></li>
+                        <li><a href="{{ path('lamaltiere_travauxsoudure') }}">{% trans from "menu" %}menu.accueil.soudure{% endtrans %}</a></li>
+					</ul>
+				</li>
+				<li><a href="{{ path('lamaltiere_produit', {'idProduit': 1}) }}">{% trans from "menu" %}menu.barques{% endtrans %}</a></li>
+				<li><a href="{{ path('lamaltiere_produit', {'idProduit': 2}) }}">{% trans from "menu" %}menu.remorques{% endtrans %}</a></li>
+				<li><a href="{{ path('lamaltiere_getProduit', {'idProduit': 3, 'idModele': 'BAE' }) }}">{% trans from "menu" %}menu.options{% endtrans %}</a></li>
+				
+				<li><a href="#">{% trans from "menu" %}menu.medias{% endtrans %}</a>
+					<ul>
+						<li><a href="{{ path('lamaltiere_photos') }}">{% trans from "menu" %}menu.medias.photosclients{% endtrans %}</a></li>
+						<li><a href="{{ path('lamaltiere_photos4000G') }}">{% trans from "menu" %}menu.medias.4000G{% endtrans %}</a></li>
+						<li><a href="{{ path('lamaltiere_videoslamaltiere') }}">{% trans from "menu" %}menu.medias.videoslamaltiere{% endtrans %}</a></li>
+						<li><a href="{{ path('lamaltiere_videosclients') }}">{% trans from "menu" %}menu.medias.videosclients{% endtrans %}</a></li>
+						<li><a href="{{ path('lamaltiere_presse') }}">{% trans from "menu" %}menu.medias.presse{% endtrans %}</a></li>
+					</ul>
+				</li>
+				<li><a href="{{ path('lamaltiere_liens') }}">{% trans from "menu" %}menu.liens{% endtrans %}</a></li>
+				<li><a href="{{ path('lamaltiere_magasin') }}">{% trans from "menu" %}menu.magasin{% endtrans %}</a></li>
+				<li><a href="{{ path('lamaltiere_contact') }}">{% trans from "menu" %}menu.contact{% endtrans %}</a></li>
+			</ul>
+		</nav>
+	{% endblock %}
+
+	{% block section %}
+	{% endblock %}
+	
+	{% block footer %}
+		<p>
+			{% trans from "accueil" %}accueil.retrouveznous{% endtrans %} :
+			<a href="{% trans from "accueil" %}accueil.lien.facebook{% endtrans %}" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/facebook-ico.png') }}" width="25px" height="25px" alt="Facebook La Maltiere" title="Facebook La Maltiere" /></a>
+			<a href="{% trans from "accueil" %}accueil.lien.googeplus{% endtrans %}" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/google-plus-ico.png') }}" width="25px" height="25px" alt="Google +" title="Google +" /></a>
+			<a href="{% trans from "accueil" %}accueil.lien.instagram{% endtrans %}" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/instagram-ico.png') }}" width="25px" height="25px" alt="Instagram" title="Instagram" /></a>
+			<a href="{% trans from "accueil" %}accueil.lien.pinterest{% endtrans %}" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/pinterest-ico.png') }}" width="25px" height="25px" alt="Pinterest" title="Pinterest" /></a>
+			<a href="{% trans from "accueil" %}accueil.lien.flickr{% endtrans %}" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/flickr-ico.png') }}" width="25px" height="25px" alt="Flickr" title="Flickr" /></a>
+			<a href="{% trans from "accueil" %}accueil.lien.youtube{% endtrans %}" target="_blank"><img src="{{ asset('bundles/lamaltieresitewebmaltiere/images/reseauxsociaux/youtube-ico.png') }}" width="25px" height="25px" alt="Youtube" title="Youtube" /></a><br /><br />
+			{{ statut }} {{ entreprise }} - {{ adresse }} - {{ ville }} - {{ telephone }} - <a href="mailto:{{ mail }}">{{ mail }}</a>
+		</p>
+		<p>
+			<small>{{ copyright }}</small>
+		</p>
+	{% endblock %}

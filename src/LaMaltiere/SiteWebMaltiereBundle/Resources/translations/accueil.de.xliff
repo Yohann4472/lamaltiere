@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="de" datatype="plaintext" original="file.ext">
+        <body>
+			<trans-unit id="0">
+                <source>accueil.catalogue.chemin</source>
+                <target>KATALOG</target>
+            </trans-unit>
+            <trans-unit id="1">
+                <source>accueil.catalogue.titre</source>
+                <target>Katalog</target>
+            </trans-unit>
+			<trans-unit id="2">
+                <source>accueil.retrouveznous</source>
+                <target>Finden Sie uns auf</target>
+            </trans-unit>
+			<trans-unit id="3">
+                <source>accueil.lien.facebook</source>
+                <target>https://www.facebook.com/LaMaltiere</target>
+            </trans-unit>
+			<trans-unit id="4">
+                <source>accueil.lien.googeplus</source>
+                <target>https://plus.google.com/u/0/+MALTIEREAluSpeedBoat/posts</target>
+            </trans-unit>
+			<trans-unit id="5">
+                <source>accueil.lien.pinterest</source>
+                <target>http://www.pinterest.com/lamaltiere/</target>
+            </trans-unit>
+			<trans-unit id="6">
+                <source>accueil.lien.instagram</source>
+                <target>http://instagram.com/la_maltiere/</target>
+            </trans-unit>
+			<trans-unit id="7">
+                <source>accueil.lien.youtube</source>
+                <target>http://www.youtube.com/user/TheMaltiere</target>
+            </trans-unit>
+			<trans-unit id="8">
+                <source>accueil.lien.flickr</source>
+                <target>https://www.flickr.com/photos/lamaltiere/</target>
+            </trans-unit>
+			<trans-unit id="9">
+                <source>accueil.entreprise.titre</source>
+                <target>Firmenpräsentation</target>
+            </trans-unit>
+			<trans-unit id="10">
+                <source>accueil.entreprise.lienvideoyoutube</source>
+                <target>//www.youtube.com/embed/Ut3dfdRX-xI</target>
+            </trans-unit>
+			<trans-unit id="11">
+                <source>accueil.entreprise.texte.denomination</source>
+                <target>LA MALTIERE</target>
+            </trans-unit>
+			<trans-unit id="12">
+                <source>accueil.entreprise.texte.phrase1</source>
+                <target>Die „Maltière“ ist ein französisches Produkt aus einer Manufaktur für geschweißte Aluminium. Holz Flachbodenboote für den Einsatz im professionellen und privaten Gebrauch rund um die Jagd, Fischerei und Freizeit.</target>
+            </trans-unit>
+			<trans-unit id="13">
+                <source>accueil.entreprise.texte.phrase2</source>
+                <target>Unsere Boote können individuell den Kundenwüschen angepasst werden.</target>
+            </trans-unit>
+			<trans-unit id="14">
+                <source>accueil.entreprise.texte.phrase3</source>
+                <target>Unsere Boote werden Weltweit unter anderem in Frankreich, Belgien, Schweiz, Kamerun, Neukaledonien, Vietnam, Nigeria, Marokko, Kongo, Saint Barth verkauft.Ausführung und Bauart erfüllen die EU Normen und verfügen über entsprechende Zertifikate.Anmeldung der Kategorie D möglich).</target>
+            </trans-unit>
+			<trans-unit id="15">
+                <source>accueil.entreprise.texte.longeur</source>
+                <target>Länge von 2700mm bis 5000mm möglich</target>
+            </trans-unit>
+			<trans-unit id="16">
+                <source>accueil.entreprise.texte.poids</source>
+                <target>Gewicht zwischen 31kg bis 85kg</target>
+            </trans-unit>
+			<trans-unit id="17">
+                <source>accueil.entreprise.texte.prix</source>
+                <target>Ab</target>
+            </trans-unit>
+			<trans-unit id="18">
+                <source>accueil.entreprise.image.fabrication</source>
+                <target>Herstellung französische Manufaktur</target>
+            </trans-unit>
+			<trans-unit id="19">
+                <source>accueil.entreprise.image.transport</source>
+                <target>Dank seines leichten Eigengewichts leicht zu transportieren</target>
+            </trans-unit>
+			<trans-unit id="20">
+                <source>accueil.entreprise.image.modifiable</source>
+                <target>Variabel auf Kundenwünsche anpassbar</target>
+            </trans-unit>
+			<trans-unit id="21">
+                <source>accueil.entreprise.image.stabilite</source>
+                <target>Eizigartige Stabilität </target>
+            </trans-unit>
+			<trans-unit id="22">
+                <source>accueil.travauxsoudure.titre</source>
+                <target>Handgeschweißt</target>
+            </trans-unit>	
+        </body>
+    </file>
+</xliff>
