@@ -38,7 +38,7 @@ class PresseController extends Controller
 	}
         
         private function creerArticle(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $article = new \LaMaltiere\SiteWebMaltiereBundle\Entity\Article();
             $article->setPublicateur($request->request->get('publicateur'));
             $article->setDate($request->request->get('date'));
@@ -51,7 +51,7 @@ class PresseController extends Controller
         }
         
         private function modifierArticle(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $article = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:Article')->find($request->request->get('id'));
 
             if (!$article){

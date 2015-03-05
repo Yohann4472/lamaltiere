@@ -36,7 +36,7 @@ class LienController extends Controller
         
         private function creerSite(Request $request)
         {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $site = new \LaMaltiere\SiteWebMaltiereBundle\Entity\Site();
             $site->setNom($request->request->get('nom'));
             $site->setAdresse($request->request->get('adresse'));
@@ -50,7 +50,7 @@ class LienController extends Controller
         
         private function modifierSite(Request $request)
         {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $site = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:Site')->find($request->request->get('id'));
 
             if (!$site){

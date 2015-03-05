@@ -95,7 +95,7 @@ class ProduitController extends Controller
 	}
         
         private function creerCategorie(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $categorie = new \LaMaltiere\SiteWebMaltiereBundle\Entity\CategorieModele();
             $categorie->setLibelle($request->request->get('libelle'));
             $categorie->setLang($request->request->get('langue'));
@@ -107,7 +107,7 @@ class ProduitController extends Controller
         }
 
         private function modifierCategorie(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $categorie = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:CategorieModele')->find($request->request->get('id'));
 
             if (!$categorie){
