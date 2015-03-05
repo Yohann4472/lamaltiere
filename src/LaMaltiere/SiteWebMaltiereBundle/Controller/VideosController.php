@@ -52,7 +52,7 @@ class VideosController extends Controller
 	}
         
         private function creerVideo(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $video = new \LaMaltiere\SiteWebMaltiereBundle\Entity\Video();
             $video->setUrl($request->request->get('url'));
             $type = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:TypeVideo')->find($request->request->get('lstTypeVideosAdmin'));
@@ -63,7 +63,7 @@ class VideosController extends Controller
         }
         
         private function modifierVideo(Request $request){
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $video = $em->getRepository('LaMaltiereSiteWebMaltiereBundle:Video')->find($request->request->get('id'));
 
             if (!$video){
