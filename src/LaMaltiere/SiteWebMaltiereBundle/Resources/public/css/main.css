@@ -14,43 +14,45 @@ body {
 
 header{
 	width					: 		1000px;
-	height					:		70px;
-	margin					: 		10px auto;
+	height					:		65px;
+	margin					: 		4px auto;
 }
 
-.contact{
-	width					:		400px;
-	height					:		30px;
+header .contact{
+	width					:		100%;
+	height					:		70px;
 	text-decoration         :		none;
 	text-align				:		right;
 	float					:		right;
 }
 
-.contact img {
-	vertical-align          :		middle;
+header .contact .logo {
+   width					:		190px;
+    height					:		70px;
+    float					:		left;
+}
+
+.language {
+    float                   :       right;
+    padding-top             :       10px;
+}
+
+.language img {
 	width					:		25px;
 	height					:		25px;
+    vertical-align          :		middle;
 }
 
-header .logo {
-	position				:		relative;
-	width					:		170px;
-	height					:		50px;
-	float					:		left;
-	text-align				:		center;
-	margin-top				:		10px;
-}
-
-.logo img{
-	width					:		190px;
-	height					:		70px;
-        margin-left                             :               30px;
+.navigation{
+    width					: 		1000px;
+    height					:		50px;
+    margin					: 		0px auto;
 }
 
 section{
 	height					:		auto;
 	width					:		1000px;
-	padding					:		1px 0px 1px 2px;
+	padding					:		1px 0px 1px 1px;
 	margin					:		0px auto 0px auto;
 }
 
@@ -135,7 +137,7 @@ figcaption{
 }
 
 footer{
-	width					:		1000px;
+	width					:		100%;
 	margin					:		0px auto;
 	height					:		114px;
 	padding					:		1px 0px 0px 0px;

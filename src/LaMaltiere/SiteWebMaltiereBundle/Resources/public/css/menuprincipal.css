@@ -1,9 +1,8 @@
 .principal{
 	position				:		relative;
 	height					:		100%;
-	width					:		735px;
-	float					:		right;
-	margin-right				:		20px;
+    width                   :       auto;
+    text-align              :       center;
 }
 
 .principal ul ul {
@@ -37,6 +36,7 @@
 	
 .principal ul li {
 	float: left;
+    text-align: left;
 }
 .principal ul li:hover {
 	background: #4b545f;
@@ -52,7 +52,7 @@
 .principal ul li a {
 	display: block; 
 	padding: 10px 9px;
-	font: bold 13pt Arial, sans-serif;
+	font: 15pt Arial, sans-serif;
 	color: rgb(252,102,0); //#757575
 	text-decoration: none;
 }
