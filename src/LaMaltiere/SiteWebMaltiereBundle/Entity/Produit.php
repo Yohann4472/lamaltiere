@@ -31,7 +31,7 @@ class Produit
 	
     /**
     * @ORM\OneToMany(targetEntity="LaMaltiere\SiteWebMaltiereBundle\Entity\CategorieModele", mappedBy="produit")
-    * @ORM\OrderBy({"libelle" = "ASC"})
+    * @ORM\OrderBy({"lang" = "ASC", "libelle" = "ASC"})
     */
     private $categories;
 

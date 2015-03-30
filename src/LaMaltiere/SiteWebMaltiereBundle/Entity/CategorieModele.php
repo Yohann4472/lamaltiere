@@ -43,6 +43,7 @@ class CategorieModele
 	
 	/**
 	* @ORM\OneToMany(targetEntity="LaMaltiere\SiteWebMaltiereBundle\Entity\Modele", mappedBy="categorie")
+    * @ORM\OrderBy({"lang" = "ASC", "nom" = "ASC"})
 	*/
 	protected $modeles;
 	
