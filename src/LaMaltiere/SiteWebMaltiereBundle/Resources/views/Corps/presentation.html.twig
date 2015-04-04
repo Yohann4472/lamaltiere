@@ -1,47 +1,62 @@
 {% extends "LaMaltiereSiteWebMaltiereBundle::layout.html.twig" %}
 
 {% block section %}
-<section class="conteneur">
-	<h2>{% trans from "accueil" %}accueil.entreprise.titre{% endtrans %}</h2>
-	<div class="presentation">
-                <iframe class="video" width="400" height="212" src="{% trans from "accueil" %}accueil.entreprise.lienvideoyoutube{% endtrans %}" frameborder="0" allowfullscreen></iframe>
-        <p>
-            <span class="gras">{% trans from "accueil" %}accueil.entreprise.texte.denomination{% endtrans %}</span>
-            {% trans from "accueil" %}accueil.entreprise.texte.phrase1{% endtrans %}<br />
-            <span class="gras">{% trans from "accueil" %}accueil.entreprise.texte.phrase2{% endtrans %}</span><br /><br />
-            {% trans from "accueil" %}accueil.entreprise.texte.phrase3{% endtrans %}<br /><br />
-            {% trans from "accueil" %}accueil.entreprise.texte.longeur{% endtrans %}<br />
-            {% trans from "accueil" %}accueil.entreprise.texte.poids{% endtrans %}<br /><br />
-            {% trans from "accueil" %}accueil.entreprise.texte.prix{% endtrans %} {{ prix }}.
-            <br />
-		</p>
-        
-		<ul>
-			<li>
-				<figure>
-					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FabricationArtisanale.jpg') }}" alt="{% trans from "accueil"  %}accueil.entreprise.image.fabrication{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.fabrication{% endtrans %}" />
-					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.fabrication{% endtrans %}</figcaption>
-				</figure>
-			</li>  
-			<li>
-				<figure>
-					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FacileTransporter.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.transport{% endtrans %}" title="{% trans from "accueil"  %}accueil.entreprise.image.transport{% endtrans %}" />
-					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.transport{% endtrans %}</figcaption>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/EntierementModifiable.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}" />
-					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}</figcaption>
-				</figure>
-			</li>  
-			<li>
-				<figure>
-					<img class="imgBas contour" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/StabiliteUnique.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}" />
-					<figcaption>{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}</figcaption>
-				</figure>
-			</li>				
-		</ul>
-	</div>
+<section>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>
+                {% trans from "accueil" %}accueil.entreprise.titre{% endtrans %}
+            </h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>
+                        <span class="gras">{% trans from "accueil" %}accueil.entreprise.texte.denomination{% endtrans %}</span>
+                        {% trans from "accueil" %}accueil.entreprise.texte.phrase1{% endtrans %}<br />
+                        <span class="gras">{% trans from "accueil" %}accueil.entreprise.texte.phrase2{% endtrans %}</span><br /><br />
+                        {% trans from "accueil" %}accueil.entreprise.texte.phrase3{% endtrans %}<br /><br />
+                        {% trans from "accueil" %}accueil.entreprise.texte.longeur{% endtrans %}<br />
+                        {% trans from "accueil" %}accueil.entreprise.texte.poids{% endtrans %}<br /><br />
+                        {% trans from "accueil" %}accueil.entreprise.texte.prix{% endtrans %} {{ prix }}.
+                        <br />
+                    </p>
+                </div>
+                <div class="col-xs-12 col-lg-offset-1 col-lg-5">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="{% trans from "accueil" %}accueil.entreprise.lienvideoyoutube{% endtrans %}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div><br />
+
+            <div class="row">
+                <div class="col-xs-6 col-lg-3 imgPresentation">
+                    <figure>
+                        <img class="img-responsive center-block" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FabricationArtisanale.jpg') }}" alt="{% trans from "accueil"  %}accueil.entreprise.image.fabrication{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.fabrication{% endtrans %}" />
+                        <figcaption><small>{% trans from "accueil" %}accueil.entreprise.image.fabrication{% endtrans %}</small></figcaption>
+                    </figure>
+                </div>
+                <div class="col-xs-6 col-lg-3 imgPresentation">
+                    <figure>
+                        <img class="img-responsive center-block" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/FacileTransporter.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.transport{% endtrans %}" title="{% trans from "accueil"  %}accueil.entreprise.image.transport{% endtrans %}" />
+                        <figcaption><small>{% trans from "accueil" %}accueil.entreprise.image.transport{% endtrans %}</small></figcaption>
+                    </figure>
+                </div>
+                <div class="clearfix visible-xs-block"></div>
+                <div class="col-xs-6 col-lg-3 imgPresentation">
+                    <figure>
+                        <img class="img-responsive center-block" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/EntierementModifiable.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}" />
+                        <figcaption><small>{% trans from "accueil" %}accueil.entreprise.image.modifiable{% endtrans %}</small></figcaption>
+                    </figure>
+                </div>
+                <div class="col-xs-6 col-lg-3 imgPresentation">
+                    <figure>
+                        <img class="img-responsive center-block" src="{{ asset('bundles/lamaltieresitewebmaltiere/images/vignettes/StabiliteUnique.jpg') }}" alt="{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}" title="{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}" />
+                        <figcaption><small>{% trans from "accueil" %}accueil.entreprise.image.stabilite{% endtrans %}</small></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}
